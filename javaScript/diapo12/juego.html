@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" type="text/css" href="css/ejercicio04.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Juego</title>
+	<style type="text/css">
+		div>div{
+			display: inline-block;
+			width: 50px;
+			height: 50px;
+			outline: 1px solid #000;
+		}
+		.oscurito{
+			background-color: #333;
+		}
+		.clarito{
+			background-color: #EEE;
+		}
+	</style>
+	<script>
+		var posiciones = [
+		[0,0,0,0,0],
+		[0,0,0,0,0],
+		[0,0,0,0,0],
+		[0,0,0,0,0],
+		[0,0,0,0,0]];
+		var blancas = 13;
+		function rellenarTablero(){
+			var negras = 12;
+			blancas = 13;
+			var total = 25;
+			var tableroStr = "";
+			for(var i = 0; i < 5; i++){
+				tableroStr += "<div>";
+				for(var j = 0; j< 5; j ++){
+					var color = Math.round(Math.random());
+					if(color== 1 && negras > 0 || total == negras){
+						negras--;
+						posiciones[i][j] = 1;
+						tableroStr += "<div class='oscurito' onclick='jugar("+i+","+j+")'></div>";
+					}else{
+						tableroStr += "<div class='clarito' onclick='jugar("+i+","+j+")'></div>";
+						posiciones[i][j] = 0;
+					}
+					total --;
+					
+				}
+				tableroStr += "</div>";
+			
+			}
+			document.getElementById("tablero").innerHTML = tableroStr;
+			document.getElementById("numBlan").innerHTML = blancas;
+		}
+		function pintar(a,b){
+			// esta casilla existe?
+			if(a >= 0 && b >= 0 && a < 5 && b < 5){
+				var casilla = document.getElementById("tablero").children[a].children[b];
+				// esta casilla era negra?
+				if(posiciones[a][b] == 1){
+					posiciones[a][b] = 0;
+					casilla.classList.remove("oscurito");
+					casilla.classList.add("clarito");
+					blancas++;
+
+				}else{
+					posiciones[a][b] = 1;
+					casilla.classList.remove("clarito");
+					casilla.classList.add("oscurito");
+					blancas--;
+				}
+
+			}
+		}
+		function jugar(a,b){
+			pintar(a,b);
+			pintar(a-1,b);
+			pintar(a,b-1);
+			pintar(a+1,b);
+			pintar(a,b+1);
+			document.getElementById("numBlan").innerHTML = blancas;
+			if (blancas == 25){
+				setTimeout(function(){window.alert("HAS GANADO!")}, 1500);
+				rellenarTablero();
+			}
+
+		}
+	</script>
+</head>
+<body>
+	<h1>Juego de las casillitas</h1>
+	<p>Pinta todas las casillas de color blanco</p>
+	<section id="tablero">
+		
+	</section>
+	<hr />
+	<label>Fichas Blancas: </label> <span id="numBlan">13</span><span>/25</span>
+	<br />
+	<button onclick="rellenarTablero()"> reiniciar</button>
+</body>
+<script>
+	rellenarTablero();
+</script>
+</html>

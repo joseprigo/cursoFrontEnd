@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" type="text/css" href="css/ejercicio03.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>03 - ¿Es tu cumpleaños?</title>
+	<style type="text/css">
+		#mostrador{
+			font-weight: bold;
+		}
+	</style>
+</head>
+<script>
+	function compararFecha(){
+		var diaC = parseInt(document.getElementById("dia").value);
+		var mesC = parseInt(document.getElementById("mes").value) - 1;
+		var hoy = new Date();
+		var cumple = new Date();
+		cumple.setDate(diaC);
+		cumple.setMonth(mesC);
+
+		if(parseInt((cumple-hoy)/86400000) == 0){
+			// hoy es tu cumple, se muy feliz
+			document.getElementById("mostrador").innerHTML = "Hoy es tu cumple, se muy feliz";
+		}else if (cumple > hoy){
+			// a cumple se le resta hoy
+			 document.getElementById("mostrador").innerHTML = "Faltan: " + parseInt((cumple-hoy)/86400000) + " días para tu cumpleaños.";
+		}else{
+			cumple.setFullYear(cumple.getFullYear()+1);
+			document.getElementById("mostrador").innerHTML = "Faltan: " + parseInt((cumple-hoy)/86400000) + " días para tu cumpleaños.";
+		}
+
+
+	}
+</script>
+<body>
+	<h1>¿Es tu cumpleaños?</h1>
+	<span>Día de tu cumpleaños</span><input type="number" id="dia" min="1" max="31" /> <br />
+	<span>Mes de tu cumpleaños</span><input type="number" id="mes" min="1" max="12" /> <br />
+	<button onclick="compararFecha()"> Comprobar</button>
+	<hr>
+	<span id="mostrador"></span>
+
+</body>
+</html>

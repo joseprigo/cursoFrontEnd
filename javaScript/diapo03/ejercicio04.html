@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" type="text/css" href="css/ejercicio01.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>04 - Kilómetros a millas</title>
+	<script type="text/javascript">
+		const CONVERSOR = 1.609344; 
+		function kmAmi(){
+			var km = parseFloat(document.getElementById("km").value);
+			document.getElementById("mi").value = km / CONVERSOR;
+		}
+		function miAkm(){
+			var mi = parseFloat(document.getElementById("mi").value);
+			document.getElementById("km").value = mi * CONVERSOR;
+		}
+		</script>
+	</head>
+	<body>
+		<h1>Conversor Kilómetros a Millas</h1>
+		<section>
+			<label>Kilometros</label><input type="number" id="km" onkeyup="kmAmi()" />
+			<br />
+			<label>Millas</label><input type="number" id="mi" onkeyup="miAkm()" />
+		</section>
+		<section>
+			<img src="img/metric_nometric.jpg" />
+		</section>
+	</body>
+</html>
+</head>
+<body>
+
+</body>
+</html>

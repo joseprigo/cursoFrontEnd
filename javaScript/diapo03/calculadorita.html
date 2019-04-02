@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<!-- <link rel="stylesheet" type="text/css" href="css/ejercicio06.css"> -->
+		<style type="text/css">
+		body{
+			width: 70%;
+			margin: auto;
+			text-align: center;
+		}
+
+		label {
+			display: inline-block;
+			margin:1vw;
+			width: 25%;
+			text-align: right;
+		}
+		</style>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title> Calculón </title>
+		<script type="text/javascript">
+			function sumar(){
+				var numero1 = parseFloat(document.getElementById("numero1").value);
+				var numero2 = parseFloat(document.getElementById("numero2").value);
+				document.getElementById("resultado").innerHTML = numero1 + numero2;
+			}
+			function restar(){
+				var numero1 = parseFloat(document.getElementById("numero1").value);
+				var numero2 = parseFloat(document.getElementById("numero2").value);
+				document.getElementById("resultado").innerHTML = numero1 - numero2;
+			}
+			function multiplicar(){
+				var numero1 = parseFloat(document.getElementById("numero1").value);
+				var numero2 = parseFloat(document.getElementById("numero2").value);
+				document.getElementById("resultado").innerHTML = numero1 * numero2;
+			}
+			function dividir(){
+				var numero1 = parseFloat(document.getElementById("numero1").value);
+				var numero2 = parseFloat(document.getElementById("numero2").value);
+				if (numero2 == 0){
+					document.getElementById("resultado").innerHTML = "División entre zero";
+				}else{
+					document.getElementById("resultado").innerHTML = numero1 / numero2;
+				}
+				
+			}
+			function rellenar(id){
+				if (document.getElementById(id).value == ""){
+					document.getElementById(id).value = 0;
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<script type="text/javascript"></script>
+		<h1> Calculadora</h1>
+		<label>Número 1:</label>
+		<input id="numero1" type="number" name="" value="0" onchange="rellenar(this.id)"/>
+		<br />
+		<label>Número 2:</label>
+		<input id="numero2" type="number" name="" value="0" onchange="rellenar(this.id)"/>
+		<br />
+		<button id="sumar" onclick="sumar()">Sumar</button>
+		<button id="restar" onclick="restar()">Restar</button>
+		<button id="multiplicar" onclick="multiplicar()">Multiplicar</button>
+		<button id="dividir" onclick="dividir()">Dividir</button>
+		<p>Resultado: <span id="resultado"></span></p>
+
+	</body>
+</html>

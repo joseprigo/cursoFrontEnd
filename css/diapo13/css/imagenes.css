@@ -1,0 +1,44 @@
+#defecto, #invertido {
+	position: relative;
+	border: 1px solid #000;
+
+}
+p{
+	text-align: justify;
+	position: relative;
+	color: #999;
+}
+img{
+	position: absolute;
+	width: 100px;
+}
+
+#defecto>img:first-of-type{
+	top:20px; left:10px;
+}
+#defecto>img:nth-of-type(2){
+	top:40px; left:60px;
+}
+#defecto>img:nth-of-type(3){
+	top:60px; left:120px;
+}
+#defecto>img:nth-of-type(4){
+	top:80px; left:180px;
+}
+
+#invertido>img:first-of-type{
+	top:20px; left:10px; z-index: 4;
+}
+#invertido>img:nth-of-type(2){
+	top:40px; left:60px; z-index: 3;
+}
+#invertido>img:nth-of-type(3){
+	top:60px; left:120px; z-index: 2;
+}
+#invertido>img:nth-of-type(4){
+	top:80px; left:180px; z-index: 1;
+}
+
+#invertido>img:hover, #defecto>img:hover{
+	z-index: 5;
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Ejemplos colores</title>
+	<style type="text/css">
+		#res {
+			height: 90px;
+			width: 90px;
+			border: solid 1px #000;
+			background-color: #000;
+		}
+		main{
+			margin: auto;
+			padding: 5vw;
+			background-color: #A0A0A0;
+			width: 50vw;
+		}
+		body{
+			background-color: #FFF;
+		}
+		.test{
+			width: 100px;
+			height: 100px;
+			background-color: blue;
+		}
+	</style>
+</head>
+<body>
+	<script type="text/javascript">
+		function mostrar(color){
+			res.style.backgroundColor = color;
+			document.body.style.backgroundColor = color;
+			document.getElementsByClassName("test")[0].style.backgroundColor = color;
+			hex.innerHTML = color.toUpperCase();
+			// Tomar los colores de los dígitos de los canales r g b
+			var r = color.substr(1,2);
+			var g = color.substr(3,2);
+			var b = color.substr(5,2);
+			// calcula los valores en decimal y genera el texto que se muesta en el div de rgb
+			rgb.innerHTML = "rgb(" + parseInt(r, 16) + ", " + parseInt(g, 16) + ", " + parseInt(b, 16) + ")";
+		}
+	</script>
+	<main>
+		<h1>Colores</h1>
+		<input type="color" name="color" value="#000000" onchange="mostrar(this.value);" />
+		<div id="res"></div>
+		<div id="hex">#000000</div>
+		<div id="rgb"> rgb(0,0,0)</div>
+		<dir class="test"></dir>
+	</main>
+</body>
+</html>

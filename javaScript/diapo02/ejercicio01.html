@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" type="text/css" href="css/ejercicio01.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>diap.30, 31, 32, 38</title>
+	</head>
+	<body>
+		<h1>Primeros scripts</h1>
+		<section>
+			<script type="text/javascript">
+				function calcular(){
+					var i = parseFloat(inicial.value);
+					var v = parseFloat(velocidad.value);
+					var t = parseFloat(tiempo.value);
+					resultado.innerHTML = i+v*t;
+				}
+			</script>
+			<h2>Calculadora MRU</h2>
+			<label for="inicial">Posición inicial</label>
+			<input type="number" id="inicial" /><label>(m)</label>
+			<br />
+			<label for="velocidad">Velocidad</label>
+			<input type="number" id="velocidad" /><label>(m/s)</label>
+			<br />
+			<label for="tiempo">Tiempo</label>
+			<input type="number" id="tiempo" /><label>(s)</label>
+			<br />
+			<button onclick="calcular();"> Calcular</button>
+			<br />
+			<label>Resultado</label>
+			<output id="resultado">0</output><span>(m)</span>
+
+		</section>
+		<section>
+			<h2>"Mouse enter" y "mouse leave"</h2>
+			<img src="img/apagada.png" onmouseenter="this.src='img/encendida.png';" onmouseleave="this.src='img/apagada.png';">
+		</section>
+		<section>
+			<h2>Mostrar Alertas</h2>
+			<div>
+				<button onclick="alert('Esto es un mensaje de alerta')">Mensaje de alerta</button>
+				<button onclick="confirm('¿Deseas Aceptar?')">Mensaje con onfirmación</button>
+				<button onclick="prompt('Escribe alguna cosa')">Mensaje con input de texto</button>
+			</div>
+			
+		</section>
+	</body>
+</html>

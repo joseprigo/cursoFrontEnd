@@ -1,0 +1,17 @@
+input, label {
+	display: block;
+}
+body{
+	display: flex;
+	margin: auto;
+	width: 80%;
+}
+
+aside, main {
+	flex:1;
+}
+
+form {display: flex;}
+fieldset {
+	flex:1;
+}

@@ -1,0 +1,43 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+p{
+	margin-bottom: 10px;
+}
+
+html{
+	background-color: pink;
+}
+
+body{
+	font-family: arial;
+	margin: 20px auto 20px auto;
+	padding: 20px;
+	width: 80%;
+	background-color: #FFF;
+	border-radius: 20px;
+	box-shadow: 2px 2px 2px grey;
+}
+
+h1, h2{
+	color:red;
+	text-shadow: 2px 2px 2px purple;
+}
+
+figure{
+	padding: 10px;
+	background-color: #00F;
+}
+
+figure img {
+	width: 100%;
+}
+
+input {
+	text-transform: uppercase;
+}
+
+[type="text"]{
+	background-color: green;
+}

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" type="text/css" href="css/ejercicio04.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>04 - Juego de dados</title>
+	<script >
+		var cartera = 10;
+		var turnos = 0;
+		var record = 0;
+		var aciertos = 0;
+		var errores = 0;
+
+		function rango(min, max){
+			return Math.floor(Math.random() * (max - min + 1) + min);
+		}
+		function jugar(){
+			
+			var monedasJuego = parseInt(document.getElementById("tirada").value);
+			if (monedasJuego > cartera){
+				window.alert("No puedes jugar más de lo que tienes");
+				return;
+			}
+			if (monedasJuego <= 0){
+				window.alert("Apuesta mínima de 1 moneda");
+				return;
+			}
+			turnos++;
+			var caras = ["uno", "dos", "tres", "cuatro", "cinco", "seis"];
+			var menor = document.getElementsByName('masOmenos')[1].checked;
+			// Tiro de dados
+			var resultado1 = rango(0,5);
+			var resultado2 = rango(0,5);
+			var resultado = resultado1 + resultado2 + 2;
+			document.getElementById("dado1").src = "img/" + caras[resultado1] + ".jpg";
+			document.getElementById("dado2").src = "img/" + caras[resultado2] + ".jpg";
+			document.getElementById("salio").innerHTML = resultado;
+
+			// Gestión resultado
+			if(resultado == 7){
+				// pierdes una moneda
+				document.getElementById("quehas").innerHTML =" 7 gana la banca";
+				cartera--;
+				errores++;
+			}else if(menor && resultado < 7 || !menor && resultado > 7){
+				// victoria
+				document.getElementById("quehas").innerHTML = "Has ganado";
+				aciertos++;
+				cartera += monedasJuego;
+
+				if(cartera > record){
+					record = cartera;
+					document.getElementById("record").innerHTML = record;
+				}
+			}else{
+				// derrota
+				errores++;
+				document.getElementById("quehas").innerHTML = "Has perdido";
+				cartera -= monedasJuego;
+				
+			}
+			if(cartera == 0){
+				document.getElementById("gameOver").innerHTML = "GAME OVER";
+				
+				setTimeout(function(){
+					if(window.confirm("Eres un perdedor nato, volver a jugar?")){
+						location.reload();
+					}
+				}, 500);
+				
+					
+				}
+			document.getElementById("aciertos").innerHTML = aciertos;
+			document.getElementById("errores").innerHTML = errores;
+			document.getElementById("monedas").innerHTML = cartera;
+			document.getElementById("turnos").innerHTML = turnos;
+
+
+
+			
+		}
+	</script>
+</head>
+<body>
+	<header>
+		<h1>Juego de dados</h1>
+	</header>
+	<main>
+		<aside>
+			<article>
+				<h2>Estadísticas</h2>
+			<p>Monedas: <span id="monedas">10</span></p>
+			<p>Turnos: <span id="turnos">0</span></p>
+			<p>Aciertos: <span id="aciertos"></span></p>
+			<p>Errores: <span id="errores"></span></p>
+			<p>RECORD: <span id="record"></span></p>
+			</article>
+			<article>
+				<h2>Jugada</h2>
+				<p>Juegas
+					<input id="tirada" value="0" />
+				</p>
+					<p> <input type="radio" name="masOmenos" id="mas" checked>
+					<label for="mas">Más de 7</label>
+					<input type="radio" name="masOmenos" id="menos"> <label for="menos">Menos de 7</label>
+				</p>
+				<button onclick="jugar()"> Jugar</button>
+			</article>
+		</aside>
+		<section>
+			<h2>Resultado</h2>
+			<img id="dado1" src="img/dado.jpg" alt="dado 1" title="dado 1" />
+			<img id="dado2" src="img/dado.jpg" alt="dado 2" title="dado 2" />
+			<p>Salió un <span id="salio"></span></p>
+			<p id="quehas"></p>
+			<p id="gameOver"></p>
+		</section>
+	</main>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" type="text/css" href="css/ejercicio07.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>07 - Calcular las notas</title>
+		<script type="text/javascript">
+			function calcular(){
+				var preguntas = parseFloat(document.getElementById("preguntas").value);
+				var descuento = parseFloat(document.getElementById("descuento").value);
+				var aciertos = parseFloat(document.getElementById("aciertos").value);
+				var errores = parseFloat(document.getElementById("errores").value);
+				
+				var noContestados = preguntas - aciertos - errores;
+				var sinDescuento = aciertos/preguntas * 10;
+				var notaFinal = sinDescuento - descuento/100 * errores/preguntas*10;
+				var notaTexto = "";
+				switch(parseInt(notaFinal)){
+					case 0:
+					case 1:
+					case 2: notaTexto = "Deficiente"; break;
+					case 3:
+					case 4: notaTexto = "Suspenso"; break;
+					case 5:
+					case 6: notaTexto = "Aprobado"; break;
+					case 7:
+					case 8: notaTexto = "Notable"; break;
+					case 9:
+					case 10: notaTexto = "Excelente"; break;
+					default: notaTexto = "Error en la nota";
+				}
+				document.getElementById("resultado").innerHTML = notaTexto;
+				document.getElementById("aciertosOut").innerHTML = aciertos.toFixed(2);
+				document.getElementById("erroresOut").innerHTML = errores.toFixed(2);
+				document.getElementById("noContestados").innerHTML = noContestados.toFixed(2);
+				document.getElementById("sinDescuento").innerHTML = sinDescuento.toFixed(2);
+				document.getElementById("notaFinal").innerHTML = notaFinal.toFixed(2);
+			}
+		</script>
+	</head>
+	<body>
+		<header>
+			<h1>Calculadora de notas</h1>
+			<h2> Para calcular el resultado de los test</h2>
+		</header>
+		<main>
+			<section>
+				<h3>Entrada de datos</h3>
+				<h4>Parámetros</h4>
+				<label >PREGUNTAS:</label>
+				<input type="number" id="preguntas" value="0" min="0"><br />
+				<label >Descuento por ERROR:</label>
+				<select id="descuento">
+					<option value="0">0%</option>
+					<option value="25">25%</option>
+					<option value="33">33%</option>
+					<option value="50">50%</option>
+					<option value="66">66%</option>
+					<option value="75">75%</option>
+					<option value="100">100%</option>
+				</select>
+				<h4>Resultados</h4>
+				<label for="aciertos">Aciertos: </label><input type="number" id="aciertos"><br />
+				<label for="errores">Errores: </label><input type="number" id="errores"><br />
+				<hr>
+				<button onclick="calcular()">Calcular</button>
+			</section>
+			<section>
+				<div>Aciertos:
+					<output id="aciertosOut"></output>
+				</div>
+				<div>
+					Errores: 
+					<output id="erroresOut"></output>
+				</div>
+				<div>
+					No Contestados:
+					<output id="noContestados"></output>
+				</div>
+				<div>
+					Nota sin descontar:
+					<output id="sinDescuento"></output>
+				</div>
+				<div>
+					Final sobre 10:
+					<output id="notaFinal"></output>
+				</div>
+				<div>
+					<output id="resultado"></output>
+				</div>
+
+			</section>
+		</main>
+		<footer>
+			Josep Rigo - NetMind
+		</footer>
+	</body>
+</html>

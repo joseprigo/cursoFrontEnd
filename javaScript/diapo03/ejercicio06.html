@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" type="text/css" href="css/ejercicio01.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>06 - Par o impar</title>
+		<script type="text/javascript">
+			function parImpar(){
+				var num = parseFloat(document.getElementById("numero").value);
+				if( num % 2 == 0){
+					document.getElementById("resultado").innerHTML = num + " es par";
+				}else{
+					document.getElementById("resultado").innerHTML = num + " es impar";
+				}
+				
+			}
+		</script>
+	</head>
+	<body>
+		<h1>Es par o es impar</h1>
+		<section>
+			<h2>introduce un valor: </h2>
+			<input type="number" id="numero" value="0" />
+			<br />
+			<button onclick="parImpar()">Calcular</button>
+			<br />
+			<label>Resultado: </label><output id="resultado"></output>
+			<br />
+		</section>
+		<section>
+			<img src="img/paresimpares.jpg" />
+		</section>
+	</body>
+</html>

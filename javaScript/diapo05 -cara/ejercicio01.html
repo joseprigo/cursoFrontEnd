@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" type="text/css" href="css/ejercicio01.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>01 - suspendiste </title>
+	<script type="text/javascript">
+		function calcular(){
+			var n1 = parseFloat(document.getElementById("nota1").value);
+			var n2 = parseFloat(document.getElementById("nota2").value);
+			var n3 = parseFloat(document.getElementById("nota3").value);
+			var re = (n1 + n2 + n3)/3;
+			if(re >= 5){
+				window.alert("Aprobaste");
+			}else{
+				window.alert("Suspendiste");
+			}
+		}
+	</script>
+</head>
+<body>
+	<section>
+		<h2> introduce tus notas </h2>
+		<label for="">Nota 1</label>
+		<input id="nota1" type="number">
+		<br>
+		<label for="">Nota 1</label>
+		<input id="nota2" type="number">
+		<br>
+		<label for="">Nota 1</label>
+		<input id="nota3" type="number">
+		<br>
+		<hr>
+		<button onclick="calcular()">Calcular</button>
+	</section>
+	<section>
+		<h1> ¿Suspendiste o aprobase?</h1>
+	</section>
+</body>
+</html>

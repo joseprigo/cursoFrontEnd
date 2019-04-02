@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" type="text/css" href="css/ejercicio01.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>08 y 09 - Viaje en coche</title>
+		<script type="text/javascript">
+			const PERCIOFIJO = 2;
+			const INCREMENTOCM3 = 0.005;
+			const SUPLEMENTOGR = 0.1
+			function precioFinal(){
+				var gasCarretera = parseFloat(document.getElementById("gasCarretera").value);
+				var kmCarretera = parseFloat(document.getElementById("kmCarretera").value);
+				var gasCiudad = parseFloat(document.getElementById("gasCiudad").value);
+				var kmCiudad = parseFloat(document.getElementById("kmCiudad").value);
+				var gasoil = parseFloat(document.getElementById("gasoil").value);
+
+				var consumo = kmCarretera  * gasCarretera / 100 +  kmCiudad  * gasCiudad / 100;
+				var re = consumo * gasoil;
+				document.getElementById("consumo").innerHTML = consumo;
+				document.getElementById("resultado").innerHTML = re;
+				
+			}
+		</script>
+	</head>
+	<body>
+		<h1>Calcular costes viaje en coche</h1>
+		<section>
+			<label>Consumo carretera</label><input type="number" id="gasCarretera" value="5.5" class="inputPeque"/><span> litros/100km</span>
+			<label>distancia carretera</label><input type="number" id="kmCarretera" value="0" class="inputPeque"/><span> km</span>
+			<br />
+			<label>Consumo ciudad</label><input type="number" id="gasCiudad" value="9.8" class="inputPeque"/><span>litros/100km</span>
+			<label>distancia ciudad</label><input type="number" id="kmCiudad" value="0" class="inputPeque"/><span> km</span>
+			<br />
+			<label>Precio gasoil</label><input type="number" id="gasoil" value="1.10" class="inputPeque"/><span>€/litro</span>
+			<br />
+			<button onclick="precioFinal()">Calcular</button>
+			<br />
+			<label>Consumo total: </label><output id="consumo"></output><span> Litros</span>
+			<br />
+			<label>Coste del viaje: </label><output id="resultado"></output><span> €</span>
+			<br />
+		</section>
+		<section>
+			<img src="img/harold.jpg" />
+		</section>
+	</body>
+</html>

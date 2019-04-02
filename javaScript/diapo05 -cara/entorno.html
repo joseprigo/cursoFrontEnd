@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" type="text/css" href="css/ejercicio06.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title> Crear un entorno gráfico </title>
+		<script type="text/javascript">
+			function calcular(){
+				// Tomar notas de los inputs
+				var teoria = parseFloat(inteoria.value);
+				var practica  = parseFloat(inpractica.value);
+				// Calcular nota
+				var nota = teoria * 0.3 + practica * 0.7;
+				// Añadir punto extra
+				if(inextra.checked){
+					nota++;
+				}
+				// Cortar la nota si pasa de 10
+				if(nota > 10){
+					nota = 10;
+				}
+				outresultado.innerHTML = nota;
+			}
+		</script>
+	</head>
+	<body>
+		<h1>Calcular las notas </h1>
+		<label>Teoría: </label>
+		<input type="number" id="inteoria" value="0" />
+		<br />
+		<label>Práctica: </label>
+		<input type="number" id="inpractica" value="0"/>
+		<br />
+		<label>Punto extra</label>
+		<input type="checkbox" id="inextra" />
+		<hr>
+		<button onclick="calcular()">Calcular</button>
+		<label>Nota final: </label> <output id="outresultado"></output>
+
+	</body>
+</html>

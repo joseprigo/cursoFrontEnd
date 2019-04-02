@@ -1,0 +1,89 @@
+*{
+	font-family: helvetica;
+	text-align: center;
+}
+section{
+	margin: 0;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-areas: 
+	" he ";
+}
+section figcaption{
+	display: none;
+}
+section img{
+	cursor: pointer;
+}
+
+h1 {
+	grid-area: he;
+}
+figure {
+	/*height: 20vh;
+	min-height: 190px;
+	*/overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #3C3C3C;
+}
+figure img{
+	display: inline-block;
+	height: 20vh;
+	min-height: 190px;
+	/*overflow: hidden;*/
+	/*display: flex;*/
+	/*align-items: center;*/
+	/*justify-content: center;*/
+	/*background-color: #3C3C3C;*/
+}
+#ventana{
+	display: none;
+	font-size: 5vw;
+	color: #0F0F0F;
+	width: 70vw;
+	border: 1px solid #F33;
+	border-radius: 1vw;
+	position: fixed;
+	top: 5%;
+	left: 10%;
+	background-color: rgba(255,255,255, 0.8);
+		
+}
+#ventana>:first-child{
+	width: 20vw;
+	cursor: pointer;
+}
+img{
+	vertical-align: middle;
+	/*min-height: 100%;*/
+	max-height: 100%;
+
+
+}
+
+@media screen and  (min-width: 600px) {
+	section{
+		grid-template-columns: 1fr 1fr;
+		grid-template-areas: 
+		" he he";
+	}
+	
+}
+
+@media screen and  (min-width: 820px) {
+	section{
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-areas: 
+		" he he he";
+	}
+	
+}
+@media screen and (min-width: 1300px) {
+	section{
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+		grid-template-areas: 
+		" he he he he";
+	}
+}

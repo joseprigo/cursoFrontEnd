@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" type="text/css" href="css/ejercicio03.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>03 - Encriptar/Desencriptar</title>
+	<style type="text/css">
+		body{
+			display: flex;
+			justify-content: space-around;
+		}
+		textarea{
+			resize: none;
+			width: 30vw;
+			height: 10vw;
+		}
+	</style>
+	<script>
+		function encriptar(){
+			var texto = document.getElementById("texto").value;
+			var encriptado = "";
+			for(var i = 0; i<texto.length; i++){
+				var codigo = texto.charCodeAt(i) + 1;
+				var letra = String.fromCharCode(codigo);
+				encriptado+= letra;
+			}
+			document.getElementById("texto").value = encriptado;
+
+		}
+		function desencriptar(){
+			var texto = document.getElementById("texto").value;
+			var desencriptado = "";
+			for(var i = 0; i<texto.length; i++){
+				var codigo = texto.charCodeAt(i) - 1;
+				var letra = String.fromCharCode(codigo);
+				desencriptado+= letra;
+			}
+			document.getElementById("texto").value = desencriptado;
+
+		}
+	</script>
+</head>
+<body>
+	<section>
+		<h1>Encriptador</h1>
+		<label>introduce el texto:</label>
+		<br>
+		<textarea id="texto"></textarea>
+		<hr />
+		<button onclick="encriptar()"> Encriptar</button>
+		<button onclick="desencriptar()"> Desencriptar</button>
+	</section>
+
+
+</body>
+</html>

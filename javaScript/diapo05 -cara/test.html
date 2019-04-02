@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<svg height="210" width="500">
+  <polygon id="poli" points="200,10 250,190 160,210" style="fill:lime;stroke:purple;stroke-width:1" />
+  Sorry, your browser does not support inline SVG.
+</svg>
+<br>
+<input id="a" type="number" name="">
+<br>
+<input id="b" type="number" name="">
+<br>
+<input id="c" type="number" name="">
+<br>
+<button onclick="calcular()" >Calcular</button>
+<script>
+
+	/**
+	https://stackoverflow.com/questions/12219802/a-javascript-function-that-returns-the-x-y-points-of-intersection-between-two-ci
+	*/
+	function intersection(x0, y0, r0, x1, y1, r1) {
+        var a, dx, dy, d, h, rx, ry;
+        var x2, y2;
+        dx = x1 - x0;
+        dy = y1 - y0;
+        d = Math.sqrt((dy*dy) + (dx*dx));
+        if (d > (r0 + r1)) {
+            return false;
+        }
+        if (d < Math.abs(r0 - r1)) {
+            return false;
+        }
+        a = ((r0*r0) - (r1*r1) + (d*d)) / (2.0 * d) ;
+        x2 = x0 + (dx * a/d);
+        y2 = y0 + (dy * a/d);
+        h = Math.sqrt((r0*r0) - (a*a));
+        rx = -dy * (h/d);
+        ry = dx * (h/d);
+        var xi = x2 + rx;
+        var xi_prime = x2 - rx;
+        var yi = y2 + ry;
+        var yi_prime = y2 - ry;
+
+        return [xi, xi_prime, yi, yi_prime];
+    }
+	
+	function calcular() {
+		// radio del circulo de la izquierda
+		var a = parseFloat(document.getElementById("a").value); 
+		// x1 (lado superior horizontal)
+		var b = parseFloat(document.getElementById("b").value); 
+		// radio del circulo de la derecha
+		var c = parseFloat(document.getElementById("c").value);  
+
+		// entrada =  x0, y0, r0, x1, y1, r1
+		// salida = x1, x2, y1, y2
+		var inter = intersection(0, 0, a, b, 0, c);
+		console.log(inter);
+		document.getElementById("poli").setAttribute("points","0,0 "+ b + ",0 "+inter[0]+"," + inter[2]);
+
+	}
+</script>
+</body>
+</html>

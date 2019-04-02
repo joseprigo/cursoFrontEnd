@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" type="text/css" href="css/ejercicio04.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>04 - hipotenusa</title>
+	<script type="text/javascript">
+		function hipotenusa(cateto1, cateto2){
+			document.getElementById("res").innerHTML = Math.sqrt(Math.pow(cateto1, 2) + Math.pow(cateto2, 2));
+		}
+	</script>
+</head>
+<body>
+	<h1>Hipotenusas</h1>
+	<label>Primer Cateto</label> <input type="number" id="cate1" /> <br />
+	<label>Segundo Cateto</label> <input type="number" id="cate2" /> <br />
+	<button onclick= "hipotenusa(parseInt(cate1.value), parseInt(cate2.value)) "> Calcular</button> <output id="res"></output>	
+</body>
+</html>

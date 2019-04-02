@@ -1,0 +1,126 @@
+
+	*{
+		margin: 0px;
+		padding: 0px;
+	}
+
+	body {
+		width: 75%;
+		margin: auto;
+		perspective-origin: 50% 100px;
+		perspective: 800px; /*muy importante*/
+	}
+
+	div{
+		height: 200px;
+		width: 200px;
+	}
+	
+	div.cubo{
+		position: absolute;
+		cursor: move;
+		/*position: relative;*/
+		margin: auto;
+		margin-top: 15vw;
+		margin-left: 15vw;
+		transform-style: preserve-3d;
+		/*transition: 1s;*/
+
+		transform: rotateX(-20deg) rotateY(35deg);
+		animation-name: rotar;
+		animation-duration: 8s;
+		animation-iteration-count: infinite;
+		animation-timing-function: linear;
+	}
+	
+	
+	div.cara{
+		position: absolute;
+		outline: solid 2px black;
+
+	}
+	
+	.front{
+		transform: translateZ(-100px);
+		background-color: rgba(255,0,0,0.8);
+		animation-name: moverA;
+		animation-duration: 3s;
+		animation-iteration-count: infinite;
+		animation-direction: alternate;
+
+	}
+	.back{
+		transform: translateZ(100px);
+		background-color: rgba(255,255,0,0.8);
+		animation-name: moverB;
+		animation-duration: 3s;
+		animation-iteration-count: infinite;
+		animation-direction: alternate;
+	}
+	.top{
+		transform: rotateX(90deg) translateZ(100px);
+		background-color: rgba(255,0,255,0.8);
+		animation-name: moverC;
+		animation-duration: 3s;
+		animation-iteration-count: infinite;
+		animation-direction: alternate;
+	}
+	.bottom{
+		transform: rotateX(-90deg) translateZ(100px);
+		background-color: rgba(0,255,0,0.8);
+		animation-name: moverD;
+		animation-duration: 3s;
+		animation-iteration-count: infinite;
+		animation-direction: alternate;
+	}
+	.left{
+		transform: rotateY(-90deg) translateZ(100px);
+		background-color: rgba(0,0,255,0.8);
+		animation-name: moverE;
+		animation-duration: 3s;
+		animation-iteration-count: infinite;
+		animation-direction: alternate;
+	}
+	.right{
+		transform: rotateY(90deg) translateZ(100px);
+		background-color: rgba(0,255,255,0.8);
+		animation-name: moverF;
+		animation-duration: 3s;
+		animation-iteration-count: infinite;
+		animation-direction: alternate;
+	}
+	
+	@keyframes rotar {
+		from {transform:rotateY(0deg) rotateX(-20deg);}
+		to {transform: rotateY(360deg) rotateX(-20deg);}
+	}
+
+	@keyframes moverA{
+		from {transform: translateZ(-100px);}
+		to {transform: translateZ(-200px);}
+	}
+	
+	@keyframes moverB{
+		from{transform: translateZ(100px);}
+		to{transform: translateZ(200px);}
+	}
+	
+	@keyframes moverC{
+		from{transform: rotateX(90deg) translateZ(100px);}
+		to{transform: rotateX(90deg) translateZ(200px);}
+	}
+
+	@keyframes moverD{
+		from{transform: rotateX(-90deg) translateZ(100px);}
+		to{transform: rotateX(-90deg) translateZ(200px);}
+	}
+
+	@keyframes moverE{
+		from{transform: rotateY(-90deg) translateZ(100px);}
+		to{transform: rotateY(-90deg) translateZ(200px);}
+	}
+
+	@keyframes moverF{
+		from{transform: rotateY(90deg) translateZ(100px);}
+		to{transform: rotateY(90deg) translateZ(200px);}
+	}

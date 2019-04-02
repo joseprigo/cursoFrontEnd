@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" type="text/css" href="css/ejercicio01.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>03 - Calculadora de aumentos de sueldo</title>
+	<script type="text/javascript">
+		function calcular(){
+			var salario = parseFloat(document.getElementById("salario").value);
+			var nivel = document.getElementById("nivel").value;
+			salario *= nivel;
+			document.getElementById("resultado").innerHTML = "Tu nuevo salario es: " + salario.toFixed(2) + " €.";
+		}
+	</script>
+</head>
+<body>
+	<section>
+		<h2> Aumentos de sueldo </h2>
+		<label >Introduce el salario anterior</label>
+		<input id="salario" type="number"> <span> €.</span>
+		<br>
+		<label >Nivel</label>
+		<select id="nivel">
+			<option value="1.30">Nivel 1</option>
+			<option value="1.05">Nivel 2</option>
+			<option value="0.93">Otros Niveles</option>
+		</select>
+		<br>
+		<hr>
+		<button onclick="calcular()">Calcular</button>
+		<div id="pantalla">
+			<output id="resultado"></output>
+		</div>
+	</section>
+	<section>
+		<img src="img/worker.png">
+	</section>
+</body>
+</html>

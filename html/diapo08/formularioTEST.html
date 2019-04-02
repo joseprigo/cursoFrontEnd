@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<!--
+NOTA:
+
+
+Test que hicimos en clase, no es el ejercicio 01
+
+
+-->
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title> Primer formulario</title>
+		<style type="text/css">
+
+			body {
+				font-family: arial;
+			}
+			fieldset {
+				max-width: 400px;
+			}
+			label {
+				margin:5px;
+				display: inline-block;
+				width: 25%;
+			}
+		</style>
+	</head>
+	<body>
+		<form method="POST" action="formulario01.html">
+			<fieldset>
+				<legend>Datos:</legend>
+				<label>Nombre:</label> <input type="text" name="nombre" required="required" autofocus="autofocus" />
+				<br />
+				<label> Clave:</label> <input type="password" name="clave" required="required" />
+				<br />
+				<input id="hombre" type="radio" name="sexo" value="h"  /> <label for="hombre">Hombre</label>
+				<input id="mujer" type="radio" name="sexo" value="m" /> <label for="mujer">Mujer</label>
+			</fieldset>
+			<fieldset>
+				<legend>Vehículo:</legend>
+				<input id="bici" type="checkbox" name="bici" value="bici" > <label for="bici"> Tengo bici</label> <br />
+				<input id="moto" type="checkbox" name="moto" value="moto"> <label for="moto"> Tengo moto</label> <br />
+				<input id="coche" type="checkbox" name="coche" value="coche"> <label for="coche"> Tengo coche</label> <br />
+			</fieldset>
+			<input type="submit" name="submit" value="Enviar" />
+			<button type="reset" id="borrar" name="borrar"> Borrar</button>
+		</form>
+	</body>
+</html>

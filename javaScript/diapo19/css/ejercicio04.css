@@ -1,0 +1,28 @@
+*{
+	font-family: helvetica;
+	text-align: center;
+}
+body{
+	width: 80%;
+	margin: auto;
+}
+h1 {
+	font-size: 8vw;
+}
+main {
+	display: flex;
+	flex-wrap: wrap;
+}
+aside{
+	flex: 1;
+	border: 0.5vw solid #000;
+	box-shadow: 0.5vw 0.5vw 1vw #000;
+	border-radius: 1vw;
+	padding: 0.7vw;
+}
+img{
+	width: 40%;
+}
+section{
+	flex:2;
+}

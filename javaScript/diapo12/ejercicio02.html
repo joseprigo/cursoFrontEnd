@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" type="text/css" href="css/ejercicio02.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>02 - más funciones con arrays</title>
+	<script>
+		function positivos(li){
+			var pos = 0;
+			for(var i = 0; i<li.length; i ++){
+				if(li[i] >= 0 ){
+					pos++;
+				}
+			}
+			return pos;
+		}
+		function negativos(li){
+			var negas = 0;
+			for(var i = 0; i<li.length; i ++){
+				if(li[i] < 0 ){
+					negas++;
+				}
+			}
+			return negas;
+		}
+		function pares(li){
+			var par = 0;
+			for(var i = 0; i<li.length; i ++){
+				if(li[i] % 2 == 0 ){
+					par++;
+				}
+			}
+			return par;
+		}
+		function impares(li){
+			var impa = 0;
+			for(var i = 0; i<li.length; i ++){
+				if(li[i] % 2 != 0 ){
+					impa++;
+				}
+			}
+			return impa;
+		}
+
+		var lista = [23,-45,67,-78,21,-83,69];
+
+		document.write("lista: " + lista + "<br />");
+		document.write("positivos: " + positivos(lista) + "<br />");
+		document.write("negativos: " + negativos(lista) + "<br />");
+		document.write("pares: " + pares(lista) + "<br />");
+		document.write("impares: " + impares(lista) + "<br />");
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>

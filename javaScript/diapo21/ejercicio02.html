@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" type="text/css" href="css/ejercicio02.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>02 - mostrar propiedades</title>
+	<script type="text/javascript">
+		function mostrar(){
+			var ventana = window.open("", "informacion", "width=400, height=300");
+			ventana.moveTo(700,200);
+			// caracteristicas de pantalla
+			var texto = 
+			"Altura de la ventana " + screen.height + "<br/>"+
+			"Ancho de la ventana " + screen.width + "<br/>"+
+			"Ancho disponible " + screen.availHeight + "<br/>"+
+			"Altura disponible " + screen.availWidth + "<br/>"+
+			"Profundidad de color para imágenes " + screen.colorDepth + "<br/>"+
+			"Profundidad de color por píxel " + screen.pixelDepth + "<br/><hr />"+
+			"Código del navegador " + navigator.appCodeName + "<br />" +
+			"Nombre del navegador " + navigator.appName + "<br />" +
+			"Versión del navegador " + navigator.appVersion + "<br />" +
+			"¿Las cookies están activas?" + navigator.cookieEnabled + "<br />" ;
+			ventana.document.write(texto);
+		}
+	</script>
+</head>
+<body>
+	<button onclick="mostrar()">Dame para obtener información</button>
+</body>
+</html>

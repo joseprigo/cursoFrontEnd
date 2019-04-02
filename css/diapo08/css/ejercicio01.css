@@ -1,0 +1,62 @@
+
+/* Estilo de letra*/
+:root{
+	font-family: arial, verdana;
+}
+h2+p::first-letter {
+	font-size: 200%;
+}
+
+p:only-of-type{
+	color:#A00000;
+}
+
+main p:nth-of-type(odd){
+	background-color: #CCF;
+}
+
+main h2:first-child{
+	text-decoration: underline;
+}
+
+form label::before{
+	content: "Aquí viene un label: ";
+}
+
+/* Menú de navegación */
+nav ul {
+	margin-left: 50vw;
+	list-style: none;
+	display: flex;
+}
+nav li{
+	font-size: 2vw;
+	border: solid 0.1vw #000;
+	margin: 1%;
+	padding: 1%;
+}
+
+nav li:last-of-type {
+	font-weight: bold;
+}
+
+/** Formulario **/
+
+input[type="submit"]{
+	background: #00FF80;
+}
+
+input:not([type="submit"]){
+	border: 2vw dotted #333;
+}
+
+form label {
+	margin:1vw;
+	display: inline-block;
+	width: 25%;
+	text-align: right;
+}
+
+p::selection, h2::selection {
+	background-color: orange;
+}

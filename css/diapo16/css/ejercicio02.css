@@ -1,0 +1,57 @@
+*{
+	font-family: helvetica;
+	text-align: center;
+}
+section{
+	margin: 0;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-areas: 
+	" he ";
+}
+
+h1 {
+	grid-area: he;
+}
+figure>div{
+	height: 20vh;
+	min-height: 190px;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #3C3C3C;
+}
+img{
+	vertical-align: middle;
+	/*min-height: 100%;*/
+	max-height: 100%;
+
+	/*EFECTOS DEL EJERCICIO*/
+	filter:grayscale(70%);
+	
+
+
+}
+
+img:hover{
+	filter: grayscale(0%);
+	transition-duration: 0.5s;
+
+}
+
+@media screen and  (min-width: 820px) {
+	section{
+		grid-template-columns: 1fr 1fr;
+		grid-template-areas: 
+		" he he";
+	}
+	
+}
+@media screen and (min-width: 1300px) {
+	section{
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-areas: 
+		" he he he";
+	}
+}

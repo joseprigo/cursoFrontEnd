@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<!-- <link rel="stylesheet" type="text/css" href="css/ejercicio01.css"> -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Switch de notas</title>
+		<script type="text/javascript">
+			function calcular(){
+				var nota = parseInt(innota.value);
+				var notaTexto = "";
+
+				switch(nota){
+					case 0:
+					case 1:
+					case 2: notaTexto = "Deficiente"; break;
+					case 3:
+					case 4: notaTexto = "Suspenso"; break;
+					case 5:
+					case 6: notaTexto = "Aprobado"; break;
+					case 7:
+					case 8: notaTexto = "Notable"; break;
+					case 9:
+					case 10: notaTexto = "Excelente"; break;
+					default: notaTexto = "Error en la nota";
+				}
+				outnota.innerHTML = notaTexto;
+			}
+		</script>
+	</head>
+	<body>
+		<h1>Notas Finales</h1>
+		<label> Introduce la nota: </label> <input type="numer" id="innota" value="0" />
+		<br />
+		<button onclick="calcular()"> Calcular</button>
+		<hr>
+		<span> La nota final es de: </span> <output id="outnota"></output>
+	</body>
+</html>

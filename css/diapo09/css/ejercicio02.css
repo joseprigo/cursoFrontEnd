@@ -1,0 +1,44 @@
+:root{
+	font-family: verdana;
+	text-align: center;
+}
+img {
+	width: 5vw;
+}
+th, td {
+	padding: 1vw 3vw;
+}
+thead th:not(:first-child), tbody th, tbody td {
+	border: solid 1px #000;
+}
+
+thead th, tbody th{
+	color: #FFF;
+	text-shadow: 0.2vw 0.2vw 0.2vw #000;
+}
+
+thead th:not(:first-child) {
+	background-image: linear-gradient(#ffff99, #00ff00);
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+
+}
+
+tbody th {
+	background-image: linear-gradient(to right, #ffff99
+, #00ff00
+);
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+}
+
+tbody td{
+	background-color: #ccffcc;
+}
+
+tfoot td{
+	color: #0A0;
+	text-shadow: 0.2vw 0.2vw 0.2vw #000;
+	font-weight: bold;
+	font-size: 4vw;
+}

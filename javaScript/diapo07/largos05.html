@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" type="text/css" href="css/ejercicio05.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>05 - Mega Cutre Paint</title>
+	<style type="text/css">
+		*{
+			margin: 0px;
+			padding: 0px;
+		}
+		#papito {
+			display: flex;
+			flex-wrap: wrap;
+			width: 750px;
+			height: 300px;
+			border: 1px solid #000;
+		}
+		#papito>div {
+			/*outline: 1px solid red;*/
+			width: 15px;
+			height: 15px;
+			cursor: grab;
+		}
+	</style>
+	<script>
+		var clicado = false;
+
+		function colorear(elemento, color){
+			if(clicado){
+				elemento.style.backgroundColor = color;
+			}
+		}
+
+		function setCursor(id, cursorName){
+			var nodes = document.getElementById(id).getElementsByTagName("div");
+				for (var i = 0; i < nodes.length; i++){
+					nodes[i].style.cursor = cursorName;
+				}
+		}
+
+		function clic(){
+			if (clicado) {
+				clicado = false;
+				setCursor("papito", "grab");
+			}else{
+				clicado = true;
+				setCursor("papito", "grabbing");	
+			}
+		}
+
+	</script>
+</head>
+<body>
+
+	<h1>Mega Cutre Paint</h1>
+	<label>Color: </label> <input type="color" id="colorin" />
+	<div id="papito" onclick="clic()">
+		<script type="text/javascript">
+			for (let i = 0; i< 1000; i++){
+				document.write("<div onmouseenter=\"colorear(this, document.getElementById('colorin').value)\"></div>");
+			}
+		</script>
+	</div>
+</html>

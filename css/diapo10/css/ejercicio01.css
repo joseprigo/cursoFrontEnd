@@ -1,0 +1,52 @@
+
+figure {
+	width: 20vw;
+	border: 1px solid #000;
+}
+
+figure:hover{
+		outline: 1px solid #F33;
+}
+
+img {
+	width: 50%;
+}
+
+/*Centrar primera figura (margin auto) y su contenido (text-align)*/
+/*los 10px de margen afectan verticalmente*/
+figure:first-of-type{
+	margin: 10px auto;
+	text-align: center;
+}
+
+/*Centrar la imagen de la segunda figura
+como se centra a ella misma, se hace con display block y margin auto*/
+figure:nth-of-type(2) img {
+	display: block;
+	margin: auto;
+
+}
+div{
+	display: inline-block;
+}
+
+/** Box sizing Antiguo:
+	El width es el total, el padding y el border quitan espacio al contenido **/
+div:first-of-type{
+	box-sizing:border-box;
+	background: #AFA;
+	width: 250px;
+	padding: 10px;
+	border: 1px solid #000;
+
+}
+
+/** Box sizing por defecto:
+	El width se suma al padding y al borde **/
+div:nth-of-type(2){
+	box-sizing: content-box;
+	background: #AAF;
+	width: 250px;
+	padding: 10px;
+	border: 1px solid #000;
+}

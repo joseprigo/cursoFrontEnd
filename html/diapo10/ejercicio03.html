@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title> E03 - Copia del Formulario</title>
+		<style type="text/css">
+			form {
+				max-width: 640px;
+			}
+
+			fieldset {
+				border: 0px;
+			}
+
+			textarea {
+				resize: none;
+				width: 443px;
+				height: 81px;
+			}
+			.paresClaveValor{
+				display: inline-block; 
+			}
+		</style>
+	</head>
+	<body>
+		<form>
+			<h1>Formulario de Registro</h1>
+			<!--elementos en linea-->
+			<fieldset>
+				<div class="paresClaveValor">
+					<label for="usuario"> Nombre de Usuario</label>  <input type="text" id="usuario" name="usuario" placeholder="ingrese Su Nombre" />
+				</div>
+				<div class="paresClaveValor">
+					<label for="correo"> Correo</label>  <input type="email" id="correo" name="correo" placeholder="Ingrese Su Correo" />
+				</div>
+				<div class="paresClaveValor">
+					<label for="passwd"> Contraseña</label>  <input type="password" id="passwd" name="passwd" placeholder="ingrese Su contraseña" />
+				</div>
+				<div class="paresClaveValor">
+					<label for="sexo"> Sexo</label>
+					<select id="sexo" name="sexo">
+					<option value="no"> No Especificar</option>
+					<option value="h">Hombre</option>
+					<option value="m">Mujer</option>
+				</select>
+				</div>
+				<div class="paresClaveValor">
+					<label for="pais"> País</label>  <input type="search" id="pais" name="pais" placeholder="ingrese Su País" />
+				</div>
+			</fieldset>
+			<!--elementos 'en bloque'-->
+			<fieldset>
+				<label for="subeFot"> Subir tu foto </label><input type="file" id="subeFot" name="subeFot" ><br />
+				<label for="cuentaMas"> Cuentanos más sobre ti</label>
+				<br />
+				<textarea cols="60" rows="5" placeholder="Cuéntanos algo sobre ti"></textarea>
+				<br />
+				<label for="conocimiento"> Cuanto sabes de HTML5? </label>
+				<input type="range" id="conocimiento" name="conocimiento" min="0" max="10">
+			</fieldset>
+			<!-- más elementos en línea-->
+			<fieldset>
+				<div class="paresClaveValor">
+					<label> Desea suscribirse a nuestro boletín?</label>  <input type="radio" id="boletinSi" name="boletin" value="si" />
+					<label for="boletinSi">Sí</label> 
+					<input type="radio" id="boletinNo" name="boletin" value="No" />
+					<label for="boletinNo">No</label> 
+				</div>
+				<div class="paresClaveValor">
+					<label for="tempo"> Cada cuantos días desea recibirlo?</label>  <input type="number" id="tempo" name="tempo" min="1" max="30" />
+				</div>
+				<div class="paresClaveValor">
+					<input type="checkbox" id="leido" name="leido" />
+					<label for="leido"> He leído los términos de condiciones y uso</label>
+				</div>
+			</fieldset>
+			<button type="submit"> Enviar </button>
+			<button type="reset"> Cancelar</button>
+		</form>
+	</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" type="text/css" href="css/ejercicio01.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>01 -</title>
+	</head>
+	<script>
+		function cambiarContenido(){
+			document.body.firstElementChild.innerHTML ="Nuevo contenido añadido dinámicamente";
+			for (let elem of document.getElementsByTagName('li')){
+				elem.style.backgroundColor = "lightblue";
+			}
+			for (let img of document.images){
+				img.src = "img/leon_rugiendo.jpg";
+				img.alt = "Rwoar!!!!!";
+			}
+		}
+	</script>
+	<body>
+		<h1>CATS!</h1>
+		<img src="img/gatito.jpg" alt="gatito" />
+		<p>So cute!</p>
+		<ul>
+			<li>Lizzie</li>
+			<li>Daemon</li>
+		</ul>
+		<button onclick="cambiarContenido()"> Cambiar contenido</button>
+	</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" type="text/css" href="css/ejercicio01.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>08 - Tipos de triángulo</title>
+		<script type="text/javascript">
+			function calcular(){
+				var a = parseFloat(document.getElementById("ladoa").value);
+				var b = parseFloat(document.getElementById("ladob").value);
+				var c = parseFloat(document.getElementById("ladoc").value);
+				var resultado = "";
+				if (a < b+c && b < a+c && c < a+b){
+					switch(true){
+						case a == b && b == c:
+						resultado = "Triángulo Equilátero";
+						var element = document.getElementById("triangulo");
+						element.className = "";
+						element.classList.add("equilatero");
+						break;
+						case a!=b && a!=c && b!=c:
+						resultado = "Triángulo Escaleno";
+						var element = document.getElementById("triangulo");
+						element.className = "";
+						element.classList.add("escaleno");
+						break;
+						default:
+						resultado = "Triángulo Isósceles";
+						var element = document.getElementById("triangulo");
+						element.className = "";
+						element.classList.add("isosceles");
+					}
+				}else{
+					resultado = "Cada lado tiene que ser menor a la suma de los otros 2.";
+				}
+				document.getElementById("resultado").innerHTML = resultado;
+			}
+		</script>
+	</head>
+	<body>
+		
+		<section>
+		<h1>Calcular Tipos de triángulo</h1>
+		<label >lado A:</label>
+		<input id="ladoa" type="number" value="0" />
+		<br />
+		<label >lado B:</label>
+		<input id="ladob" type="number" value="0"/>
+		<br />
+		<label >lado C:</label>
+		<input id="ladoc" type="number" value="0"/>
+		<br />
+		<hr />
+		<button onclick="calcular()">Calcular</button>
+		<div id="pantalla">
+			<output id="resultado"></output>
+		</div>
+	</section>
+		<section  >
+			<div id="triangulo"></div>
+		</section>
+	</body>
+</html>

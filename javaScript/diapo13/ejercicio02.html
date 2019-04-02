@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" type="text/css" href="css/ejercicio02.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>02 - Reloj</title>
+</head>
+<body>
+<h1>Reloj digital</h1>
+<output id="pantalla"></output>
+<script >
+	function reloj(){
+		var ahora = new Date();
+		var hora = ahora.getHours();
+		var minuto = ahora.getMinutes();
+		var segundo = ahora.getSeconds();
+
+		var mostrador = "";
+		if(hora<10){
+			mostrador += "0";
+		}
+
+		mostrador += hora + " : ";
+
+		if(minuto <10){
+			mostrador += "0";
+		}
+
+		mostrador += minuto + " : ";
+
+		if(segundo <10){
+			mostrador += "0";
+		}
+		mostrador += segundo;
+		document.getElementById("pantalla").innerHTML = mostrador;
+
+	}
+	setInterval(reloj, 500);
+</script>
+
+</body>
+</html>

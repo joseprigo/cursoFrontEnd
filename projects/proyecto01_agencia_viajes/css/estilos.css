@@ -1,0 +1,269 @@
+@import url('https://fonts.googleapis.com/css?family=Dancing+Script');
+@font-face{
+	font-family: 'traveling';
+	src: url('../fonts/TravelingTypewriter.otf'), url('../fonts/TravelingTypewriter.ttf');
+}
+
+/** Parte Común a todas las páginas**/
+body{
+	text-align: justify;
+	margin: 0px;
+	font-family: arial;
+	background-image: url("../img/background.jpg");
+}
+header {
+	background-color: #b3ecff;
+}
+#titulo, #logoPrincipal{
+	display: inline-block;
+	vertical-align: middle;
+}
+nav {
+	height: 5vw;
+	min-height: 50px;
+	background-color: #262626;
+}
+
+main {
+	width: 90%;
+	margin: auto;
+}
+
+section {
+	margin: 1vw auto;
+	display: inline-block;
+	background-color: rgba(255,255,255,.5);
+	border-radius: .5vw;
+	padding: 1vw;
+	box-shadow: .2vw .2vw rgba(0,0,0,.5);
+}
+
+nav ul {
+	margin: 0; 
+	list-style: none;
+	display: flex;
+}
+nav li{
+	margin: 0.5vw;
+	padding: 0.5vw;
+}
+/* unvisited link */
+a:link {
+	text-decoration: none;
+	color: #FFFFFF;
+}
+
+/* visited link */
+a:visited {
+	color: #FFFFFF;
+}
+
+/* mouse over link */
+a:hover, #dondeEstamos {
+	font-weight: bold;
+	color: #FFFFFF;
+	font-size: 4vw
+}
+/* selected link */
+a:active {
+	color: #FFFFFF;
+}
+footer {
+	padding: 5vw 5vw 10vw;
+	text-align: right;
+	background-color: #262626;
+	color: #FFFFFF;
+}
+
+h1{
+	font-family: 'traveling';
+}
+
+h2{
+	font-family: 'Dancing Script';
+	text-shadow: 0.2vw 0.4vw 0.1vw #AAA;
+}
+/**
+Utilitzando selectores: estilos para
+las imágenes de los figures SOLO en el main.
+En el header también tengo figures con imganes
+a las que quiero aplicar otros estilos;
+ **/
+main figure>img {
+	width: 100%;
+}
+
+main figure>iframe {
+	width: 100%;
+	max-width: 600px;
+}
+
+.fondo_negro{
+	height: 60px;
+	background-color: #262626;
+}
+
+/**
+chuleta del padding
+padding: 25px 50px 75px 100px;
+		top -right - bottom - left
+**/
+p, h1, h2 {
+	padding-right: 5px;
+	padding-left: 5px; 
+}
+
+.fotoCentrada {
+	margin: 0 auto;
+		width: 100%; 
+}
+
+/**
+Estilos boton contacto
+**/
+
+#logoLogin{
+	display: inline-block;
+	vertical-align: middle;
+}
+#loginPic{
+	width: 80px;
+}
+#linkLog:hover{
+	margin:1px;
+	color: #A0A0A0;
+	font-size: 20px;
+}
+#linkLog{
+	color: #101010;
+}
+
+.ancho{
+	display: block;
+}
+
+
+
+/**
+chuleta del padding (rel)
+padding: 25px 50px 75px 100px;
+		top -right - bottom - left
+**/
+p, h1, h2 {
+	padding: 0vw 1vw;
+}
+/** FIN PARTE COMÚN **/
+
+/**
+FIGURES - imagenes y iframes de youtube 
+que se encuentran dentro del 'figure' de un article
+**/
+iframe {
+	width: 100%;
+}
+.fotoCentrada {
+	margin: 0 auto;
+	width: 100%;
+}
+
+/** Iframes**/
+.videoMedio{
+	margin:auto;
+	width: 100%;
+
+}
+
+.tipoRutas{
+	vertical-align: top;
+	margin: 0 auto;
+	margin-bottom: 1vw;
+	width: 30%;
+	min-width: 400px;
+	padding: 1vw 1vw 2vw 1vw;
+}
+.linkExt:link, .linkExt:visited{
+	color: #000;
+	font-weight: bold;
+}
+.linkExt:hover{
+	font-size: 16px;
+	color: #00F;
+
+}
+
+/** Estilos de los formularios **/
+fieldset {
+	border-width: 0px;
+	margin: 0 auto;
+	padding: 0;
+	width: 90%;
+}
+form {
+	
+	display: inline-block;
+	border: 2px solid #000;
+	border-color: #059;
+	width: 100%;
+	background-image: linear-gradient(#FFF, #cad1e8);
+}
+label {
+	margin:5px;
+	display: inline-block;
+	width: 25%;
+	text-align: right;
+}
+#singButton{
+	background-color: #5C9E3B;
+	color: #F0F0F0;
+	border-color: #000;
+	margin:5px 5px 5px 170px;
+}
+textarea {
+	width: 90%;
+	resize: none;
+	max-height: 50px;
+}
+
+/**
+Estilos boton contacto
+**/
+
+#logoLogin{
+	display: inline-block;
+	vertical-align: middle;
+}
+#loginPic{
+	width: 80px;
+}
+#linkLog:hover{
+	margin:1px;
+	color: #A0A0A0;
+	font-size: 20px;
+}
+#linkLog{
+	color: #101010;
+}
+
+/*Tablas con precios*/
+tbody>tr:nth-of-type(odd){
+	background: #CCC;
+}
+
+td, th{
+	padding: .5vw 2vw;
+}
+td{
+	text-align:right;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+/** Listas desordenadas en el body **/
+main ul>li {
+list-style-image: url("../img/arrow.png");
+}
+main ul {
+	list-style-position: inside;
+}

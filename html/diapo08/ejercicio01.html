@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title> Ejercicio 01</title>
+		<style type="text/css">
+			h1, h2 {
+				margin: 1px;
+			}
+			input {
+				margin: 2px 0px;
+			}
+			body {
+				font-family: arial;
+			}
+
+			form {
+				vertical-align: middle;
+				display: inline-block;
+				border: 2px solid #000;
+				border-color: #059;
+				margin-left: 10px;
+			}
+			fieldset {
+				max-width: 400px;
+			}
+			label {
+				margin:5px;
+			}
+			.formAncho {
+				width:  405px;
+			}
+		</style>
+	</head>
+	<body>
+		<form method="POST" action="ejercicio01.html">
+			<h1> User Input Form</h1>
+			<fieldset>
+				<legend> Personal Particular</legend>
+				<label class="textLabel">Name:</label> <input type="text" name="nombre" required="required" autofocus="autofocus" />
+				<br />
+				<label class="textLabel"> Password:</label> <input type="password" name="clave" required="required" />
+				<br />
+				<label> Gender:</label>
+				<input id="hombre" type="radio" name="sexo" value="h"  /> <label for="hombre">Male</label>
+				<input id="mujer" type="radio" name="sexo" value="m" /> <label for="mujer">Female</label>
+				<br />
+				<label for="age">Age</label>
+				<select id="age" name="age" selected="less1">
+					<option value="less1">&#60 1 year old</option>
+				</select>
+			</fieldset>
+			<fieldset>
+				<legend>Languages</legend>
+				<input id="java" type="checkbox" name="java" value="java" > <label for="java"> Java</label>
+				<input id="ccplusplus" type="checkbox" name="ccplusplus" value="ccplusplus"> <label for="ccplusplus"> C/C++</label>
+				<input id="csharp" type="checkbox" name="csharp" value="csharp"> <label for="csharp"> C#</label> 
+			</fieldset>
+			<fieldset>
+				<legend>Instruction</legend>
+				<textarea id="instruction" name="instruction" cols="35" rows="5" placeholder="Enter your instruction here ..."></textarea>
+			</fieldset>
+			<input type="submit" name="submit" value="SEND" />
+			<button type="reset" id="borrar" name="borrar"> CLEAR</button>
+		</form>
+		<form method="POST" action="ejercicio01.html" class="formAncho">
+			<h2>Formulario estructurado</h2>
+			<fieldset>
+				<legend>Datos personales</legend>
+				<label class="textLabel">Nombre</label>
+				<br />
+				<input type="text" name="nombre" required="required" />
+				<br />
+				<label class="textLabel"> Apellidos</label>
+				<br />
+				<input type="text" name="apellidos" required="required" />
+				<br />
+				<label class="textLabel"> DNI</label>
+				<br />
+				<input type="text" name="clave" required="required" />
+			</fieldset>
+			<fieldset>
+				<legend>Datos personales</legend>
+				<label class="textLabel">Nombre de usuario</label>
+				<br />
+				<input type="text" name="nombre" required="required" />
+				<br />
+				<label class="textLabel"> Contraseña</label>
+				<br />
+				<input type="password" name="clave" required="required" />
+				<br />
+				<label class="textLabel"> Repite la contraseña</label>
+				<br />
+				<input type="password" name="clave" required="required" />
+			</fieldset>
+		</form>
+	</body>
+</html>

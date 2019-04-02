@@ -1,0 +1,273 @@
+/**Propuesta de colores principales(gris: #515151 purpura: #7d2181)
+otros colores, blanco: #F0F0F0**/
+/*consideraciones generales*/
+@font-face {
+  font-family: "fragment_core";
+  src: url("../fonts/Fragmentcore.otf");
+}
+*{
+	font-family: helvetica;
+	margin: 0;
+	padding: 0;
+}
+
+/*Estructura de la web*/
+section {
+	margin: 5vw 0;
+}
+
+body{
+	width: 70%;
+	margin: auto;
+}
+
+/*Cabecera*/
+header{
+	text-align: center;
+	color: #F0F0F0;
+	
+}
+h1 {
+	font-family: "fragment_core";
+	letter-spacing: 0.4vw;
+	background-color: #7d2181;
+	font-size: 300%;
+	padding: 3vw 0;
+}
+#lista-productos{
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+}
+
+nav{
+	position: sticky;
+	top: 000px;
+	z-index: 2;
+	justify-content: space-around;
+	padding: 0vw 0;
+	background-color: #515151;
+	overflow: hidden;
+}
+nav:hover{
+	max-height: 100%;
+}
+nav>ul{
+	list-style-type: none;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	padding: 1vw 0;
+	background-color: #515151; 
+}
+
+/*Cuerpo de contenido*/
+
+main h2 {
+	background-color: #7d2181;
+	padding: 1.5vw 1vw;
+	color: #F0F0F0;
+	position: sticky;
+	top: 0.45vw;
+
+}
+main section>article{
+	padding: 2vw 0;
+	margin-bottom: 1vw;
+}
+
+#lista-productos>article{
+	min-width: 300px;
+	background-color:initial;
+	
+}
+#lista-productos>article>a{
+	background-color: #F0F0F0;
+	display: inline-block;
+	padding: 2vw 0;
+	margin-bottom: 1vw;
+	border-bottom-right-radius: 1vw;
+	border-bottom-left-radius: 1vw;
+}
+#lista-productos>article:hover>a{
+	
+	position: relative;
+	animation-name: sacudida;
+	animation-duration: 0.25s;
+	/*box-shadow: 1vw 1vw 1vw #7d2181, -1vw 1vw 1vw #7d2181;*/
+	box-shadow: 0 0 5vw #7d2181;
+}
+@keyframes sacudida{
+	0%{transform: rotateZ(0);}
+	25%{transform: rotateZ(5deg);}
+	50%{transform: rotateZ(-5deg);}
+	100%{transform: rotateZ(0);}
+
+}
+
+
+#lista-productos h2{
+	color: #F0F0F0;
+	background-color: #7d2181;
+}
+#lista-productos a, #lista-productos a:visited{
+	text-decoration: none;
+	color: #0F0F0F;
+}
+
+.gallery{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+.gallery>*{
+	padding: 2vw;
+}
+/*#presupuesto{
+	display: flex;
+}*/
+#presupuesto>form{
+	max-width: 760px;
+	padding: 2vw 0;
+}
+
+#presupuesto textarea {
+   resize: none;
+   width: 30vw;
+   height: 10vw;
+}
+
+fieldset p{
+	display: flex;
+	justify-content: center;
+	padding: 5px 0;
+}
+fieldset p>*{
+	width: 40%;
+}
+
+fieldset p>label{
+	padding-right: 0.5vw;
+	text-align: right;
+}
+fieldset p>input[type="radio"]{
+	width: 10%;
+}
+.flex-container{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+#presupuesto article {
+	width: 48%;
+	min-width: 340px;
+}
+#presupuesto form{
+	padding: 0.5vw;
+}
+
+#presupuesto fieldset{
+
+	background-color: rgba(255,255,255, .8);
+}
+#presupuesto fieldset:not(:first-of-type){
+	display: none;
+}
+
+fieldset:nth-of-type(2)>legend>span{
+	font-weight: bold;
+}
+
+/*cookies*/
+#modalCookie{
+	position: fixed;
+	font-size: x-large;
+	color: #F0F0F0;
+	bottom: 0px;
+	left: 0px;
+	width: 100%;
+	background-color: rgba(0,0,0,0.9);
+	z-index: 10;
+	padding: 4vw 0vw;
+	text-align: center;
+}
+#aceptaCookies{
+	cursor:pointer;
+	font-weight: bold;
+	border: 1px solid #F0F0F0;
+	border-radius: 1vw;
+	padding: 0.2vw 0.5vw;
+}
+#aceptaCookies:hover{
+	text-shadow: 0 0 0.4vw #FFF;
+	box-shadow: 0 0 0.4vw #FFF;
+}
+#modalCookie>a{
+	color:#C0C0C0;
+}
+
+.bg{
+	/*https://unsplash.com/photos/PrQqQVPzmlw*/
+	background-image: url("../img/purple_crystal_top.jpg");
+	background-size: 100% auto;
+	position: fixed;
+	width: 100%;
+	height: 300%;
+	top:0;
+	left:0;
+	z-index: -1;
+}
+nav a{
+	text-decoration: none;
+	font-size: 1.6vw;
+	color: #F0F0F0;
+}
+
+img{
+	width: 15vw;
+	min-width: 300px;
+}
+article {
+	background-color: #F0F0F0;
+	border-bottom-right-radius: 1vw;
+	border-bottom-left-radius: 1vw;
+}
+p{
+	padding: 1vw .5vw;
+	text-align: justify;
+}
+
+footer{
+	color: #F0F0F0;
+	background-color: #515151;
+	border-top-right-radius: 1vw;
+	border-top-left-radius: 1vw;
+	padding: 4vw 1vw;
+}
+
+footer a{
+	color: #FFF;
+}
+footer a:hover{
+	font-style: italic;
+}
+
+
+@media (max-width: 1500px) {
+	body {
+		width: 90%;
+	}
+	nav a{
+		font-size: 2.3vw;
+	}
+}
+
+
+@media (max-width: 1300px) {
+	.bg{
+	/*https://unsplash.com/photos/PrQqQVPzmlw*/
+
+	background-size: auto 100%;
+
+}
+}

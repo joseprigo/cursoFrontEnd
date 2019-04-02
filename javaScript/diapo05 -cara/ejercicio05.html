@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" type="text/css" href="css/ejercicio01.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>05 - Circunferencia multiples operaciones</title>
+		<script type="text/javascript">
+			const PI = 3.1416;
+			function calcular(){
+				var radio = parseFloat(document.getElementById("radio").value);
+				var perimetro = document.getElementById("per");
+				var aria =  document.getElementById("ari");
+				var diametro = document.getElementById("dia");
+				var res = "";
+				if(perimetro.checked){
+					var per = 2 * PI * radio;
+					res += "El perímetro de este círculo es = " + per.toFixed(2) + "<br>";
+				}
+				if(aria.checked){
+					var ari =  PI * radio ** 2;
+					res += "El area de este círculo es = " + ari.toFixed(2) + "<br>";
+				}
+				if(diametro.checked){
+					var dia = radio * 2;
+					res += "El diámetro de este círculo es = " + dia.toFixed(2);
+				}
+				document.getElementById("resultado").innerHTML = res;
+			}
+		</script>
+	</head>
+	<body>
+		
+		<section>
+		<h1>Calcular circunferencias</h1>
+		<label >radio</label>
+		<input id="radio" type="number" value="0">
+		<br>
+		<label >Operacion:</label>
+		<br />
+		<label for="per">Perímetro</label><input type="checkbox" id="per"><br />
+		<label for="ari">Área</label><input type="checkbox" id="ari"><br />
+		<label for="dia">Diámetro</label><input type="checkbox" id="dia"><br />
+		<hr>
+		<button onclick="calcular()">Calcular</button>
+		<div id="pantalla">
+			<output id="resultado"></output>
+		</div>
+	</section>
+		<section>
+			<img src="https://upload.wikimedia.org/wikipedia/commons/1/1d/CIRCLE_1.svg" />
+		</section>
+	</body>
+</html>

@@ -1,0 +1,14 @@
+:root{
+	background-image:url("../img/aoe01.gif"), url("../img/car.png"), url("../img/tree.png"), url("../img/house02.png"), url("../img/grass.png"), url("../img/sky.jpg");
+	background-size: 100%, 30%, 35%, 55%, 100%, 100%;
+	background-repeat: no-repeat;
+	background-position: 0%0%, 20%0%, 100%0%, 50%0%, 0%0%, 0%0%;
+}
+
+p {
+	background-color: rgba(255, 255, 255, 0.5);
+	padding: 1vw;
+	width: 40%;
+	border-radius: 0.5vw;
+	box-shadow: 0.2vw 0.2vw 0.2vw #000;
+}

@@ -1,0 +1,72 @@
+/** DISPLAY */
+
+body{
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-gap: 2vw;
+}
+
+h1{
+	grid-column: 1/4;
+}
+
+
+
+
+section:nth-of-type(3)>div:first-of-type{
+	display: flex;
+	justify-content: space-between;
+}
+
+/** Acabados**/
+
+br+label, label:first-of-type {
+	margin:5px;
+	display: inline-block;
+	width: 25%;
+	text-align: right;
+}
+
+img {
+	width: 50%;
+}
+body{
+	margin: 0;
+	background: #99FF90;
+	background-image: url("../img/matrix-background-vector.jpg");
+}
+section {
+	background-color: #EEE;
+
+	padding: 1vw;
+	border-radius: 1vw;
+
+} 
+h1{
+	margin: 0;
+	padding: 0.6vw 0;
+	text-align: center;
+	background-image: linear-gradient(to bottom right, blue, yellow, orange, red, green);
+}
+
+
+@media (max-width: 1300px) {
+
+	body{
+		grid-template-columns: 1fr 1fr;
+	}
+	h1{
+	grid-column: 1/3;
+}
+}
+
+@media (max-width: 650px) {
+
+	body{
+		grid-template-columns: 1fr;
+		grid-gap: 1vw;
+	}
+	h1{
+	grid-column: 1/2;
+}
+}

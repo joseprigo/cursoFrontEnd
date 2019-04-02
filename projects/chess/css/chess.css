@@ -1,0 +1,16 @@
+td {
+	width: 40vw;
+	height: 11vw;
+	font-size: 8vw;
+	text-align: center;
+	font-weight: bold;
+	text-shadow: 0vw 0vw 0.5vw #AAA;
+
+}
+td:hover{
+	outline: 4px solid #F33;
+}
+
+tr:nth-of-type(odd)>td:nth-of-type(even), tr:nth-of-type(even)>td:nth-of-type(odd){
+	background-color: #881010;
+}

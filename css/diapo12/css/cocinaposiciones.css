@@ -1,0 +1,315 @@
+@import url('https://fonts.googleapis.com/css?family=Cookie');
+
+html{
+	font-family: arial;
+}
+body{
+	font-size: 1.5vw;
+	margin: 0;
+	background-image: url("../img/mantel_azul.jpg");
+	background-size: 30vw;
+}
+
+header, nav, main, footer {
+	box-shadow: 0.2vw 0.2vw 0.3vw #000; 
+	margin: 0.5vw;
+}
+header,  footer{
+	border: 1px solid #000;
+	background-color: rgba(255,255,255,0.6);
+}
+
+nav, main{
+	border: 1px solid #000;
+	background-color: rgba(255,255,255,0.9);
+}
+
+
+header {
+	display: flex;
+}
+header>div:first-of-type{
+	flex:1;
+}
+header>div:nth-of-type(2){
+	flex:5;
+	text-align: center;
+}
+header>div:nth-of-type(3){
+	flex:1;
+}
+
+h1 {
+	text-shadow: 0.3vw 0.3vw 1px #FFF,-0.3vw -0.3vw 1px #FFF;
+	transform: rotateZ(3deg);
+	font-family: 'Cookie', cursive;
+	font-size: 7vw;
+	margin-top: 4vw;
+	margin-bottom: 0vw;
+}
+
+nav {
+	display: flex;
+	flex-wrap: wrap;
+	position: sticky;
+	top: 0px;
+}
+
+nav{
+	z-index: 2;
+	min-width: 350px;
+}
+
+nav {
+	flex:3;
+	display: flex;
+
+}
+
+nav>div:first-of-type>div{
+	
+	margin: 2vw 1vw;
+
+	/*display: inline-flex;*/
+}
+
+/**
+ Menú deplegable
+*/
+nav>ul{
+	margin-top: 0;
+	margin-bottom: 0; 
+	padding: 1vw 1vw;
+}
+nav>ul>li{
+	display: inline-block;
+}
+
+nav>ul li{
+	list-style: none;
+	padding: 0.5vw;	position: relative;
+}
+nav li ul{
+	overflow: hidden;
+	text-overflow: ellipsis;
+  	white-space: nowrap;
+	font-size: 0.1em;
+	position: absolute;
+	max-height: 0px;
+	left:0px;
+	top:4vw;
+	background-color: #FFF;
+	box-shadow: 0px 2vw 4vw rgba(60,60,60,0.6);
+	
+	z-index: 999;
+	transition: 1s;
+
+}
+
+.menu-h li ul{
+	left:0px;
+	top:40px;
+}
+
+nav li:hover ul{
+	font-size: 1em;
+	max-height: 999px;
+	background-color: #ccc;
+	padding-left: 0px;
+
+}
+
+
+/** LOGIN QUE EN EL DOM SE ENCUENTRA EN EL HEADER **/
+header>div:last-of-type{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position:fixed;
+	right: -40vw;
+	top: 1vw;
+	background: #ccc;
+	z-index: 200;
+	padding: 1vw;
+	border-radius: 5%;
+	width: 45vw;
+	box-shadow: 0.2vw 0.2vw 0.3vw #000;
+	transition: 1s; 
+	
+}
+header>div:last-of-type:hover{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	right: 0;
+	width: 100vw;
+	padding-top: 7vw;
+	padding-bottom: 7vw;
+
+	
+}
+
+nav a {
+	text-decoration: none;
+	font-weight: bold;
+	color: #333;
+}
+nav a:hover, input:hover{
+	text-shadow: 0.1vw 0.1vw 1px #fff9cc, -0.2vw -0.1vw 1px #fff9cc;
+}
+
+header input:not([type=submit]){
+	width: 20vw;
+}
+
+header input[type=submit]{
+	width:15%;
+	margin: auto auto;
+}
+
+
+/**Parte principal**/
+table, td, th {
+	border: 1px solid #000;
+	border-collapse: collapse;
+}
+p {
+	margin: 0.5vw 0.5vw;
+	text-align: justify;
+}
+
+main table {
+	width: 40vw;
+	min-width: 330px;
+	margin:3vw;
+	float:right;
+/*
+	overflow: auto;*/
+}
+
+
+th{
+	background-color: #ccc;
+}
+
+.galeria {
+	border: 1px solid #000;
+	width: 95%;
+	margin: auto;
+	display: flex;
+	text-align: center;
+	flex-wrap: wrap;
+
+}
+.galeria>div{
+	cursor: url("../img/hot.png") 16 16, auto;
+	border: 1px solid #000;
+	background: rgba(0,0,0,0.7);
+	min-width: 100px;
+	min-height: 100px;
+	margin: 1vw 1vw;
+	flex: 1;
+	display: flex;
+	align-items: center; /*Verticalmente*/
+	/*justify-content: center;  /* seria horizontalmente */
+}
+.galeria>div:hover{
+	outline: 1px solid #F33;
+}
+.galeria img, header img{
+	width: 100%;
+}
+section{
+	overflow: hidden;
+	position: relative;
+}
+section>img{
+	position: absolute;
+	float:right;
+	text-align: center;
+	left: 38.5vw;
+	top: 8vw;
+	width: 20vw;
+
+	
+}
+#l{
+	float: left;
+}
+#r{
+	float:right;
+}
+#l,#r{
+
+	width: 48%;
+}
+#l:before, #r:before { 
+  content: ""; 
+  width: 9vw; 
+  height: 13vw; 
+}
+#l:before { 
+  float: right; 
+}
+#r:before { 
+  float: left; 
+}
+
+/**Footer **/
+
+footer{
+	display: flex;
+	position: relative;
+}
+
+footer>div{
+	position: absolute;
+}
+footer>div:last-of-type{
+	left: 50%;
+	top:50%;
+	font-size: 6vw;
+	font-weight: bold;
+	color:#333;
+	text-shadow: 0.5vw 0.5vw 1vw #FFF;
+}
+
+
+.contenedorVideo{
+	position: relative;
+	height: 50vw;
+}
+
+.videoFondo{
+	
+	top: 0;
+	left: 0;
+}
+
+@media (max-width: 800px) {
+	body{
+		font-size: 2.5vw;
+	}
+	nav a {
+		font-size:2vw;
+	}
+}
+@media (max-width: 600px) {
+	body{
+		font-size: 4vw;
+	}
+	nav a {
+		font-size:4vw;
+	}
+	main table{
+		float: none;
+		margin: auto;
+	}
+	p{
+		padding-right: 1vw; 
+		padding-left: 1vw;
+	}
+	.videoFondo{
+	display: none;
+}
+}

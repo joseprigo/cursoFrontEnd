@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title> 01 - tests de patterns</title>
+</head>
+<body>
+	<form>
+		<label>CIF / DNI</label>
+		<input type="text" name="cifdni" pattern="^(([a-zA-Z]{1}\d{7}[a-zA-Z0-9]{1}|(\d{8}[a-zA-Z]{1})))" title="Introduce un CIF o DNI válido" />
+		<br />
+		<label> Password (mínimo 8 caracteres)</label>
+		<input type="Password" name="passwd" pattern="\w{8}" title="Solo 8 letras" />
+		<button type="submit">Enviar</button>
+	</form>
+</body>
+</html>

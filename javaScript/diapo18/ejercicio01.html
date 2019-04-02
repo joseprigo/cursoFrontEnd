@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" type="text/css" href="css/ejercicio01.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>01 - algunos ejemplos</title>
+		<style type="text/css">
+			.grande{
+				font-size: 2em;
+			}
+			.rojo{color: red;}
+			.cursiva{font-style: italic;}
+			#visor{height: 200px; width: 200px; overflow: scroll;}
+			.cuadrados-color{
+				height: 100px; width: 100px; margin: 10px;
+			}
+			#d1{background-color: red;}
+			#d2{background-color: blue;}
+			#d3{background-color: yellow;}
+		</style>
+		<script>
+			function aplicar(elemento, clase){
+				elemento.classList.add(clase);
+			}
+			function eliminar(elemento, clase){
+				elemento.classList.remove(clase);
+			}
+			function actualizar(){
+				info.innerHTML = visor.scrollTop + ' - ' + visor.scrollLeft;
+			}
+			function centrar(){
+				visor.scrollTop=100;
+				visor.scrollLeft = 100;
+			}
+			function clonar(figura){
+				var clonf = figura.cloneNode();
+				var cloni = figura.children[0].cloneNode();
+				clonf.setAttribute("class", "grande");
+				clonf.onclick = function(){this.remove();}
+				clonf.appendChild(cloni);
+				document.body.appendChild(clonf);
+			}
+			function subir(el){
+				if(el!=el.parentElement.children[0]){
+					el.parentElement.insertBefore(el, el.previousElementSibling);
+				}else{
+					el.parentElement.appendChild(el);
+				}
+			}
+
+		</script>
+	</head>
+	<body>
+		<p id="par">Esto es un texto</p>
+		<select id="sel">
+			<option value="grande">Grande</option>
+			<option value="rojo">Rojo</option>
+			<option value="cursiva">Cursiva</option>
+		</select>
+		<button onclick="aplicar(par, sel.value);">Aplicar</button>
+		<button onclick="eliminar(par, sel.value);">Eliminar</button>
+		<hr />
+		<figure id="visor" onscroll="actualizar();">
+			<img src="img/Tux.png" height="400" width="400">
+		</figure>
+		<p id="info"></p>
+		<button onclick="centrar();">Centrar</button>
+		<hr />
+		<section>
+			<figure onclick="clonar(this)">
+				<img src="img/gremlin.jpg" />
+			</figure>
+		</section>
+		
+		<div>
+			<div id="d1" class="cuadrados-color" onclick="subir(this);"></div>
+		<div id="d2" class="cuadrados-color" onclick="subir(this);"></div>
+		<div id="d3" class="cuadrados-color" onclick="subir(this);"></div>
+		</div>
+		
+	</body>
+</html>

@@ -1,0 +1,51 @@
+*{
+	margin: 0px;
+	padding: 0px;
+	text-align: center;
+}
+
+body{
+	padding: 10px;
+}
+
+
+
+#login{background-color: lightyellow;}
+header{
+	background-color: #c99;
+	padding: 1vw;
+	}
+main{
+	background-color: #cff;
+}
+aside{
+	background-color: #ccf;
+	padding: 1vw;
+}
+
+footer{
+	background-color: pink;
+}
+
+
+.grid-container{
+	display: grid;
+	grid-template-columns: 20% auto 20% ;
+	/*justify-content: center;*/
+	/*align-content: center;*/
+	grid-gap: 5px;
+}
+header{
+	grid-column: 1/3;
+}
+
+aside{
+	grid-column: 1/2;
+}
+
+main{
+	grid-area: 2/2/5/4;
+}
+footer{
+	grid-column: 1/span 3;
+}

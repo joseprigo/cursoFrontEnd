@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" type="text/css" href="css/ejercicio01.css" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>06 - Saber numeros primos</title>
+		<style type="text/css">
+			
+			
+		</style>
+		<script type="text/javascript">
+			function esPrimo(){
+				var num = parseFloat(document.getElementById("numero").value);
+				var i = num-1;
+				var divisible = false;
+				while (i > 1 && !divisible ){
+					if(num%i==0){
+						divisible = true;
+					}
+					i--;
+				}
+				if(divisible){
+					document.getElementById("resultado").innerHTML = "El número " + num + " no es primo";
+				}else if(num > 1){
+					document.getElementById("resultado").innerHTML = "El número " + num + " es primo";
+				}else{
+					document.getElementById("resultado").innerHTML = "En matemáticas, un número primo es un <strong>número natural mayor que 1 </strong> que tiene únicamente dos divisores distintos: él mismo y el 1 (fuente: <a href='https://es.wikipedia.org/wiki/N%C3%BAmero_primo' >wikipedia </a> )";
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<h1>Saber si es primo</h1>
+		<label>numero</label> <input type="number" id="numero" /> <br />
+		<button onclick="esPrimo()"> Calcular</button>
+		<hr />
+		<label>Resultado: </label> <output id="resultado"></output>
+		
+	</body>
+</html>	

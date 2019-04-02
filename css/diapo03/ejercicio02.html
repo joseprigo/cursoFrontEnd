@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title> Mega coches</title>
+		<style type="text/css">
+			/** Estilos generales **/
+			header, nav, main, figure, li, footer, #login, #logo{
+				border: solid 1px #000;
+				margin: 5px;
+			}
+
+			body{
+				width: 90%;
+				margin: auto;
+				font-size: 1em;
+			}
+
+			figure{
+				display: inline-block;
+			}
+			/** Cabecera **/
+
+			header{
+				background-color: #b1b1cd;
+			}
+
+			header>img{
+				vertical-align: middle;
+				display: inline-block;
+			}
+
+			#cabeceraCentral, #login{
+				vertical-align: middle;
+				display: inline-block;
+			}
+
+			#cabeceraCentral {
+				width: 40%;
+				text-align: center;
+			}
+
+			label {
+				margin:1vw;
+				display: inline-block;
+				width: 25%;
+				text-align: right;
+			}
+
+			/**Menú de navegación**/
+			ul {
+				margin-left: 60%;
+				list-style: none;
+				display: flex;
+			}
+			li{
+				border: solid 0.1vw #000;
+				margin: 1%;
+				padding: 1%;
+			}
+
+			/** contenido principal **/
+			table, #modelos, #detalles{
+				display: inline-block;
+			}
+			#detalles {
+				width: 550px;
+			}
+
+			p, h2 {
+				margin-left: 5px; 
+			}
+			th, td {
+				border: 1px solid #000;
+				height: 65px;
+				width: 100px; 
+			}
+			table {
+				border-collapse: collapse;
+			}
+
+			th {
+				background-color:  #bfbfbf;
+			}
+
+			.fotosMedianas {
+				width: 150px;
+				height: 150px;
+			}
+			.fotosPequenas {
+				width: 120px;
+				height: 120px;
+			}
+
+			/** Pie **/
+			footer {
+				padding-top: 50px;
+				text-align: right;
+			}			
+		</style>
+	</head>
+	<body>
+		<div id="wrap">
+			<header>
+				<img src="img/logocoche.jpg" alt="logo" title="Logo de Mega coches" />
+
+				<div id="cabeceraCentral"><h1>Mega Coches</h1></div>
+				<div id="login">
+					<label>user</label><input type="text" name="user" />
+					<br />
+					<label>password</label><input type="password" name="password"/>
+					<br />
+					<button> Login</button>
+				</div>
+			</header>
+			<nav>
+				<ul id="elementosMenu">
+					<li><a href=""> Inicio</a></li>
+					<li><a href="">Fotos</a></li>
+					<li><a href="">Contacto</a></li>
+					<li><a href="">Registro</a></li>
+				</ul>
+			</nav>
+			<main>
+				<section>
+					<h2> Bienvenidos... </h2>
+					<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				</section>
+				<section id="detalles">
+					<h2>Detalles</h2>
+					<figure class="fotosMedianas">
+						<img src="" />
+					</figure>
+					<figure class="fotosMedianas">
+						<img src="" />
+					</figure>
+					<figure class="fotosMedianas">
+						<img src="" />
+					</figure>
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+					</p>
+				</section>
+				<section id="modelos">
+					<h2> Principales modelos </h2>
+					
+					
+					<table>
+						<tr>
+							<th># </th>
+							<th>Modelo</th>
+							<th> Año</th>
+						</tr>
+						<tr>
+							<td>1</td>
+							<td>Seat Altea</td>
+							<td>2008</td>
+						</tr>
+						<tr>
+							<td>2</td>
+							<td>Peugot 308</td>
+							<td>2010</td>
+						</tr>
+						<tr>
+							<td>3</td>
+							<td>Renault Megane</td>
+							<td>2005</td>
+						</tr>
+					</table>
+				</section>
+				<section>
+					<figure class="fotosPequenas">
+						<img src="" />
+					</figure>
+					<figure class="fotosPequenas">
+						<img src="" />
+					</figure>
+					<figure class="fotosPequenas">
+						<img src="" />
+					</figure>
+					<figure class="fotosPequenas">
+						<img src="" />
+					</figure>
+					<figure class="fotosPequenas">
+						<img src="" />
+					</figure>
+					<figure class="fotosPequenas">
+						<img src="" />
+					</figure>
+					<figure class="fotosPequenas">
+						<img src="" />
+					</figure>
+				</section>
+			</main>
+			<footer> by Josep Rigo</footer>
+		</div>
+	</body>
+</html>

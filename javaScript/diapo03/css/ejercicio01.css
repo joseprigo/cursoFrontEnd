@@ -1,0 +1,27 @@
+*{
+	font-family: arial;
+}
+section{
+	display: inline-block;
+	
+	vertical-align: middle;
+}
+section:first-of-type {
+	width: 55%;
+}
+section:last-of-type {
+	width: 40%;
+}
+label{
+	display: inline-block;
+	padding-right: 0.2vw;
+	width: 25%;
+	text-align: right;
+}
+img{
+	width: 100%;
+}
+.inputPeque {
+	margin: 0.3vw 0;
+	width: 5vw;
+}

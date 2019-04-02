@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" type="text/css" href="css/ejercicio01.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>05 - Euros a pesetas y viceversa</title>
+		<script type="text/javascript">
+			const cambio = 166.386;
+			function pesetas(){
+				var cantidad = parseFloat(document.getElementById("cantidad").value);
+				var resultado = cantidad * cambio;
+				document.getElementById("resultado").innerHTML = resultado + " pts. ";
+			}
+			function euros(){
+				var cantidad = parseFloat(document.getElementById("cantidad").value);
+				var resultado = cantidad / cambio;
+				document.getElementById("resultado").innerHTML = resultado + " € ";
+			}
+		</script>
+	</head>
+	<body>
+		<h1>Conversor Euros Pesetas</h1>
+		<section>
+			<h2>introduce un valor: </h2>
+			<input type="number" id="cantidad" name="" />
+			<br />
+			<button onclick="pesetas()"> € => pts.</button>
+			<button onclick="euros()"> pts. => €</button>
+
+			<br />
+			<label>Resultado: </label><output id="resultado"></output>
+			<br />
+		</section>
+		<section>
+			<img src="img/euros_pesetas.jpg" />
+		</section>
+	</body>
+</html>

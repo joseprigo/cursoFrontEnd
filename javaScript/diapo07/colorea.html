@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" type="text/css" href="css/ejercicio06.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Colorear </title>
+	<style type="text/css">
+		div {
+			border: 1px solid #000;
+			height: 200px;
+			width: 200px;
+		}
+	</style>
+	<script type="text/javascript">
+		function colorea (elemento, color){
+			elemento.style.backgroundColor = color;
+		}
+	</script>
+</head>
+<body>
+	<h1>Colorea</h1>
+	<p>Selecciona un color y haz click en los div</p>
+	<span>Color:</span>
+	<input type="color" id="incolor" value="#ff000" />
+	<div onclick="colorea(this, incolor.value);"></div>
+	<div onclick="colorea(this, incolor.value);"></div>
+	<div onclick="colorea(this, incolor.value);"></div>
+	<button onclick="colorea(document.body, incolor.value);"> Colorear body</button>
+</body>
+</html>

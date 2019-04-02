@@ -1,0 +1,230 @@
+@font-face {
+	font-family: "helveticamazing";
+	src: url("../fonts/Helveticamazing.ttf");
+}
+
+@font-face {
+	font-family: "caviar_it";
+	src: url("../fonts/CaviarDreams_Italic.ttf");
+}
+@font-face {
+	font-family: "caviar_bd";
+	src: url("../fonts/CaviarDreams_Bold.ttf");
+}
+
+*{
+	margin: 0px;
+	padding: 0px;
+	font-family: helvetica;
+}
+
+a{
+	text-decoration: none;
+}
+
+img{
+	width: 100%;
+}
+h1 {
+	display: inline-block;
+	padding-top: 0.5vw;
+	padding-bottom: 1vw;
+	padding-left: 0.5vw;
+	font-size: 6vw;
+	font-family: "helveticamazing";
+}
+/*h1::first-letter{
+	background-color: #3C3C3C;
+}*/
+
+/*h1::first-letter{
+	color: red;
+	border: 1px solid #3C3C3C;
+	background-image: linear-gradient( #6F6F6F, #F9F9FF,#F9F9FF);
+	padding-bottom: 0.5vw;
+	border-top-left-radius: 0.4vw; 
+}*/
+
+h2 {
+	padding-left: 0.5vw;
+	padding-top: 1vw; 
+	padding-bottom: 0.5vw; 
+	background-image: linear-gradient(141deg, #F0F0F0, #EBEEEF, #BEE, #cFF, #F9F9FF);
+}
+
+nav, main, footer, h1, h2, a{
+	color: #3C3C3C;
+}
+.about-container{
+	display: grid;
+	grid-template-columns: auto 30%;
+	margin-bottom: 2vw;
+
+}
+.itemsGrid {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+}
+
+.itemsGrid figure {
+	width: 100%;
+}
+
+/** articles HOVER effects**/
+.itemsGrid article {
+	padding: 2vw;
+	text-align: justify;
+	
+}
+
+.itemsGrid article>* {
+	display: inline-block;
+}
+.itemsGrid article:hover{
+	/*outline: 1px solid #CCC;*/
+	box-shadow: 0.5vw 0.5vw 0.5vw rgba(190, 190, 190, 1);
+}
+
+.itemsGrid article:hover *{
+	transform: translate(-0.5vw, -0.5vw);
+
+}
+
+.itemsGrid figure>a>img{
+	border-radius: 50%;
+}
+
+nav ul {
+	list-style: none;
+	display: flex;
+	position: relative;
+	flex-wrap: wrap;
+	justify-content: center;
+	max-height: 10vw;
+}
+.responsive-menu svg {
+	display: none;
+}
+nav a {
+	font-family: "caviar_bd";
+	font-size: 2vw;
+}
+nav li {
+	width: 9vw;
+	text-align: center;
+}
+nav ul>li:hover>a {
+/*	font-size: 0.8em;*/
+	
+	font-family: "caviar_it";
+}
+
+main {
+	width: 80%;
+	margin: auto;
+}
+
+aside {
+	padding: 1vw;
+	margin-left: 2vw;
+	border: 1px solid #000;
+	display: grid;
+}
+aside>img{
+	grid-column: 1/3;
+	width: 20vw;
+}
+
+footer {
+	background-image: url("../img/restaurantbridge.jpg");
+	background-size: 100%;
+	background-repeat: no-repeat;
+	padding: 24vw 0;
+	font-size: 5vw;
+	text-align: center;
+	text-shadow:.1vw .1vw 10px #fff, .1vw .1vw 10px #ccc;
+}
+
+nav>div {
+	margin: 0.2vw 1vw;
+}
+
+@media (max-width: 1000px) {
+	/** header **/
+
+	/** nav**/
+	nav li {
+		width: 13vw;
+	}
+	nav a{
+		font-size: 2.4vw;
+	}
+
+	/** main **/
+	.about-container{
+		grid-template-columns: 1fr;
+
+	}
+	.about-container>aside{
+		grid-row: 1;
+	}
+	.itemsGrid {
+		grid-template-columns: 1fr 1fr;
+	}
+	aside {
+		margin-left: 0;
+	}
+	/**FOOTER **/
+}
+@media (max-width: 700px) {
+
+	/** NAV **/
+	.responsive-menu {
+		display: inline-block;
+		position: relative;
+		cursor: pointer;
+	}
+	.responsive-menu>svg{
+		display: inline-block;
+	}
+	.responsive-menu ul{
+		/*left: 6vw;*/
+		left: 40px;
+		max-height: 0px;
+		top: 0vw;
+		overflow: hidden;
+		position: absolute;
+		display: inline-block;
+		width: 60vw;
+		background-color: #3C3C3C;
+		
+	}
+	.responsive-menu li {
+		width: 100%;
+
+	}
+	.responsive-menu a {
+		font-size: 4vw;
+		color: white;
+
+	}
+	.responsive-menu:hover ul{
+		max-height: 100vw;
+	}
+	.responsive-menu:hover a{
+		font-family: "caviar_bd";
+		max-height: 100vw;
+	}
+
+	.itemsGrid {
+		grid-template-columns: 1fr;
+	}
+
+	h1 {
+		font-size: 12vw;
+	}
+	main {
+		width: 90%;
+	}
+	
+}

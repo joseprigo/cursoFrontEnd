@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" type="text/css" href="css/ejercicio05.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>05 - Saber si es primo</title>
+	<script>
+		function esPrimo(a){
+			var divisible = false;
+			var i = a-1;
+			while (i > 1 && !divisible){
+				if(a % i == 0){
+					divisible = true;
+				}else{
+					i--;
+				}
+			}
+			if(divisible || a <= 1){
+				document.getElementById("resultado").innerHTML = "El número " + a + " no es primo";
+			}else{
+				document.getElementById("resultado").innerHTML = "El número " + a + " es primo";
+			}
+		}
+	</script>
+</head>
+<body>
+
+	<h1>Saber si es primo</h1>
+	<label>número</label> <input type="number" id="numI" /> <br />
+	<button onclick= "esPrimo(parseInt(numI.value)) "> Calcular</button> <output id="resultado"></output>
+</body>
+</html>

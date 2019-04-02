@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" type="text/css" href="css/ejercicio01.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>01 - publicidad</title>
+		<style type="text/css">
+			#publi{
+				border: 2vw solid green;
+				border-radius: 1vw;
+				padding: 1.5vw;
+				background-color: #202020;
+				color: lightgreen;
+				position: fixed;
+				width: 700px;
+				height: 500px;
+				text-align: center;
+				letter-spacing: .2vw;
+				top: 100px;
+				left: 20%;
+				display: none;
+			}
+			iframe{
+				width: 100%;
+				height: 90vh;
+			}
+
+		</style>
+		
+	</head>
+	<body>
+		<div id="publi">
+			<h2>Publicidad</h2>
+			<h3>Publicidad</h3>
+			<h4>Publicidad</h4>
+			<h5>Publicidad</h5>
+			<button onclick="terminarPubli()"> Cerrar</button>
+		</div>
+		<iframe  src="https://www.youtube.com/embed/TkFHYODzRTs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</body>
+	<script>
+		function molestarUsuario(){
+			var popUp = document.getElementById("publi");
+			if(popUp.style.display == 'block'){
+				popUp.style.display = 'none';
+			}else{
+				popUp.style.display = 'block';
+			}
+		}
+		function terminarPubli(){
+			clearInterval(publiInter);
+			document.getElementById("publi").style.display = 'none';
+		}
+		// cada 1'5 segundos, así molesta mas.
+		var publiInter = setInterval(molestarUsuario, 1500);
+	</script>
+</html>

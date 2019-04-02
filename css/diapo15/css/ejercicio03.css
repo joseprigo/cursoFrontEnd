@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css?family=Cookie');
+* {
+	font-family: helvetica;
+}
+
+@keyframes mymove {
+    from {right: -200px;}
+    to {right: 0px;}
+}
+
+img {
+	/*transition: all 2s ease-in;
+	transition: all 2s ease-out;*/
+	transition-duration: .5s;
+	width: 33%;
+	margin: 1vw;
+}
+img:hover {
+	width: 66%;
+	margin: 1vw;
+	transition-duration: 2s;
+}
+article {
+	overflow: auto;
+	position: relative;
+	animation: mymove 5s;
+}
+p {
+	text-align: justify;
+}
+article:nth-of-type(odd)>img {
+	float: right;
+	/*overflow: auto;*/
+}
+article:nth-of-type(even)>img {
+	float: left;
+	/*overflow: auto;*/
+
+}
+
+/**
+Formulario
+**/
+label {
+	display: inline-block;
+	text-align: right;
+	width: 35%;
+	padding: 0.5vw;
+	font-size: 2vw;
+}
+input {
+	padding: 0.5vw 0;
+	width: 50%;
+}
+header, aside, main, footer {
+	padding: 5vw;
+}
+
+header {
+	background-image: radial-gradient( ellipse farthest-corner at 25% 45% , #FFF, rgba(255,255,255,0) ), url("../img/header.jpg");
+	background-size: 100%;
+	background-position: 0 25%;
+	background-repeat: no-repeat;
+	grid-area: he;
+}
+
+h1{
+	font-family: 'Cookie', cursive;
+	font-size: 4em;
+}
+
+form {
+	background-color: #ffffcc;
+	grid-area: fo;
+}
+
+aside {
+	background-color: #9966ff;
+	/*grid-area: as;*/
+}
+
+main {
+	background-color: #00ffff;
+	grid-area: ma;
+}
+
+footer {
+	background-color: #ff66ff;
+	grid-area: ft;
+}
+
+.grid-container{
+	display: grid;
+	grid-gap: 0.5vw;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-template-areas: 
+	"he he he fo"
+	".  ma ma ma"
+	".  ma ma ma"
+	".  ma ma ma"
+	"ft ft ft ft";
+}
+@media screen and (max-width: 900px) {
+	.grid-container{
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-areas: 
+		"he he fo"
+		".  .  . "
+		"ma ma ma"
+		"ft ft ft";
+	}
+}
+
+@media screen and (max-width: 480px) {
+	article:nth-of-type(odd)>img, article:nth-of-type(even)>img   {
+		float: none;
+		display: block;
+		margin: auto;
+		width: 70%;
+	}
+	.grid-container{
+		grid-template-columns: 1fr;
+		grid-template-areas: 
+		"he he"
+		"fo fo"
+		".  . "
+		".  . "
+		".  . "
+		"ma ma"
+		"ft ft";
+	}
+	aside{
+		grid-column: 1/3;
+	}
+}

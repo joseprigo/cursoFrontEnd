@@ -1,0 +1,30 @@
+figure{
+	display: inline-block;
+	border: 5px solid #006;
+	padding: 2vw;
+	vertical-align: top;
+}
+
+figure:first-of-type>img:hover{
+	visibility: hidden;
+}
+
+figure:nth-of-type(2)>img:hover{
+	display: none;
+}
+figure:nth-of-type(3){
+	overflow: hidden;
+	border-radius: 100%;
+	box-shadow: 4px 4px 4px rgba(60, 60, 60, 0.6);
+	padding: 0px;
+
+}
+figure:nth-of-type(3)>img{
+	width: 100%;
+	transition: 1s;
+	transform-origin: 60% 70%;
+}
+
+figure:nth-of-type(3)>img:hover{
+	transform:  scale(2);
+}

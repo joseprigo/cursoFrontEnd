@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" type="text/css" href="css/ejercicio04.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>04 - Calcular meses</title>
+		<script type="text/javascript">
+			function calcularMeses(){
+				var m1 = parseFloat(document.getElementById("mes1").value);
+				var a1 = parseFloat(document.getElementById("anno1").value);
+				var m2 = parseFloat(document.getElementById("mes2").value);
+				var a2 = parseFloat(document.getElementById("anno2").value);
+
+				//pasar años a meses
+				a1 *=12;
+				a2 *=12;
+				m1 += a1;
+				m2 += a2;
+				if (m1 > m2){
+					var aux = m1;
+					m1 = m2;
+					m2 = aux;
+				}
+				var res = m2 - m1;
+				window.alert("Han pasado " + res.toFixed(2) + " meses." );
+			}
+		</script>
+	</head>
+	<body>
+		<h1>Calcular los meses entre dos fechas</h1>
+		<h2>Primero introduce una fecha (mes/año)</h2>
+		<label for="">Mes: </label>
+		<input type="number" id="mes1" value="0"/>
+		<br />
+		<label for="">Año: </label>
+		<input type="number" id="anno1" value="0"/>
+		<br />
+		<h2>Ahora introduce otra fecha (mes/año)</h2>
+		<label for="">Mes: </label>
+		<input type="number" id="mes2" value="0"/>
+		<br />
+		<label for="">Año: </label>
+		<input type="number" id="anno2" value="0"/>
+		<br />
+		<button onclick="calcularMeses()">calcular</button>
+	</body>
+</html>

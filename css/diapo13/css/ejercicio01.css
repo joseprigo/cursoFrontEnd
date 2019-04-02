@@ -1,0 +1,62 @@
+.menu-h, .menu-v{
+	background-color: #009900;
+}
+.menu-v{
+	width: 20vw;
+}
+.menu-h li, .menu-v li{
+	list-style: none;
+	padding: 10px;
+	color: #99FF99;
+}
+.menu-h>li{
+	display: inline-block;
+}
+.menu-v li, .menu-h li{
+	position: relative;
+}
+
+.menu-h li:hover, .menu-v li:hover{
+	color: #F0F0F0;
+	background: #000;
+
+}
+
+.menu-h li:hover ul, .menu-v li:hover ul {
+	max-height: none;
+}
+/**
+las propiedades overflow, text-overflow y white-space
+evitan que haya salto de línea en cada una de las opciones 
+del submenú
+**/
+.menu-h li ul, .menu-v li ul{
+	overflow: hidden;
+	text-overflow: ellipsis;
+  	white-space: nowrap;
+	
+	position: absolute;
+	overflow: hidden;
+	max-height: 0px;
+	left:0px;
+	top:40px;
+	background-color: #666;
+	box-shadow: 0px 2px 4px rgba(60,60,60,0.6);
+	transition: 0.5s;
+	z-index: 999;
+
+}
+
+.menu-h li ul{
+	left:0px;
+	top:40px;
+}
+
+.menu-v li ul{
+	left:20vw;
+	top:0px;
+}
+
+ul {
+	padding-left: 0px;
+}

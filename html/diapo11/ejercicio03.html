@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>03 - buscado en Internet</title>
+	</head>
+	<body>
+		<form>
+			<label for="mail"> email:</label>
+			<input type="text" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+			<a href="https://stackoverflow.com/questions/5601647/html5-email-input-pattern-attribute"> stack overflow</a>
+			<br />
+			<label for="telf"> Teléfono:</label><input type="text" name="telf" pattern="[\+]\d{2}[\(]\d{2}[\)]\d{4}[\-]\d{4}">
+			<a href="https://stackoverflow.com/questions/37936138/html-validation-for-phone-numbers"> Stack overflow</a>
+			<br />
+			<label for="fecha"> fecha:</label><input type="text" name="fecha" title="formato dd/mm/aaaa" pattern="^(?:(?:(?:0?[1-9]|1\d|2[0-8])[/](?:0?[1-9]|1[0-2])|(?:29|30)[/](?:0?[13-9]|1[0-2])|31[/](?:0?[13578]|1[02]))[/](?:0{2,3}[1-9]|0{1,2}[1-9]\d|0?[1-9]\d{2}|[1-9]\d{3})|29[/]0?2[/](?:\d{1,2}(?:0[48]|[2468][048]|[13579][26])|(?:0?[48]|[13579][26]|[2468][048])00))$">
+			<a href="https://es.stackoverflow.com/questions/59516/validar-una-fecha-dd-mm-aaaa-con-expresiones-regulares" > Stack overflow</a>
+			<br />
+			<button type="submit">Enviar</button>
+		</form>
+	</body>
+</html>

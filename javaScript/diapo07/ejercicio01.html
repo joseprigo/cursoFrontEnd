@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" type="text/css" href="css/ejercicio01.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>01 - Saber el mínimo</title>
+	</head>
+	<script type="text/javascript">
+		function minimo(a,b){
+			if (a < b){
+				document.getElementById("salida").innerHTML = a;
+			}else{
+				document.getElementById("salida").innerHTML = b;
+			}
+		}
+	</script>
+	<body>
+		<h1>Saber el mínimo de dos números</h1>
+		<input type="number" id="numero1" /> <label>, </label> <input type="number" id="numero2" />
+		<br />
+		<button onclick="minimo(numero1.value, numero2.value);"> numero</button>
+		<hr />
+		<label>Resultado: </label> <output id="salida"></output>
+	</body>
+</html>

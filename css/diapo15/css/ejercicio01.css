@@ -1,0 +1,58 @@
+﻿header, form, aside, main, footer {
+	padding: 5vw;
+}
+
+header {
+	background-color: #ff9999;
+	grid-area: he;
+}
+
+form {
+	background-color: #ffffcc;
+	grid-area: fo;
+}
+
+aside {
+	background-color: #9966ff;
+/*	grid-column: 1/3;*/
+	/*grid-area: as;*/
+}
+
+main {
+	background-color: #00ffff;
+	grid-area: ma;
+}
+
+footer {
+	background-color: #ff66ff;
+	grid-area: ft;
+}
+
+.grid-container{
+	display: grid;
+	grid-gap: 0.5vw;
+	grid-template-areas: 
+	"he he he fo"
+	".  ma ma ma"
+	".  ma ma ma"
+	".  ma ma ma"
+	"ft ft ft ft";
+}
+
+@media screen and (max-width: 500px) {
+	.grid-container{
+		grid-template-areas: 
+		"he he"
+		"fo fo"
+		".  . "
+		".  . "
+		".  ."
+		"ma ma"
+		"ma ma"
+		"ma ma"
+		"ft ft";
+	}
+	aside{
+		grid-column: 1/3;
+	}
+}

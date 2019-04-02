@@ -1,0 +1,71 @@
+*{
+	font-family: helvetica;
+	text-align: center;
+}
+#botones{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	grid-area: bo;
+}
+#botones>h2{
+	width: 100%;
+}
+
+#botones>div, #jugador1, #jugador2 {
+	width: 200px;
+	height: 200px;
+	border: 1px solid #F00;
+	border-radius: 1vw;
+	box-shadow: 1vw 1vw 10px #000;
+}
+
+#botones>div:hover {
+	transform: rotate(20deg);
+}
+
+#msg {
+	grid-area: ms;
+	color: #F01010;
+	font-size: 5vw;
+}
+
+.piedra {
+	background: url("../img/manos.png");
+	background-size: 500px;
+	background-position: -135px -30px;
+}
+
+.papel {
+	background: url("../img/manos.png");
+	background-size: 500px;
+	background-position: -40px -250px;
+}
+
+.tijeras {
+	background: url("../img/manos.png");
+	background-size: 500px;
+	background-position: -250px -250px;
+}
+
+ul{
+	list-style-type: none;
+}
+
+#tablero{
+	grid-area: ta;
+	display: flex;
+	justify-content: space-around;
+}
+
+aside{
+	grid-area: as;
+}
+
+main{
+	display: grid;
+	grid-template-areas:
+	'ta ta ta'
+	'ms ms as'
+	'bo bo as'; 
+}

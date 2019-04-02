@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" type="text/css" href="css/ejercicio03.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>03 - Galería con JavaScript</title>
+	<script type="text/javascript">
+		function abrirVentana(foto){
+			var ventana = document.getElementById("ventana");
+			ventana.style.display = 'block';
+			ventana.children[1].src = foto.src;
+			ventana.children[2].innerHTML = foto.nextElementSibling.innerHTML;
+
+			if(foto.parentElement.previousElementSibling.tagName == "FIGURE"){
+				var anterior = foto.parentElement.previousElementSibling.children[0];
+				ventana.children[3].onclick = function(){
+					abrirVentana(anterior);
+				};
+			}else{
+				ventana.children[3].onclick = function(){
+					this.parentElement.style.display = 'none';
+				}
+			}
+
+			if(foto.parentElement.nextElementSibling != undefined){
+				var siguiente = foto.parentElement.nextElementSibling.children[0];
+				ventana.children[4].onclick = function(){
+					abrirVentana(siguiente);
+				};
+			}else{
+				ventana.children[4].onclick = function(){
+					this.parentElement.style.display = 'none';
+				}
+			}
+			
+		}
+
+		document.addEventListener('DOMContentLoaded', function(event) {
+			var imges = document.querySelectorAll("section img");
+			for(let img of imges){
+				img.onclick = function(){
+					abrirVentana(this);
+				};
+			}
+});
+	</script>
+</head>
+<body>
+	<section>
+		<h1 id="loritos"> Galería de Los Simpson</h1>
+	<figure id="foto01">
+		<img src="img/simpsons/220px-Lisa_Simpson.png" alt="">
+		<figcaption>Lisa Simpson</figcaption>
+	</figure>
+	<figure id="foto02">
+		<img src="img/simpsons/220px-Maggie_Simpson.png" alt="">
+		<figcaption>Maggie Simpson</figcaption>
+	</figure>
+	<figure id="foto03">
+		<img src="img/simpsons/Selma_Bouvier.png" alt="">
+		<figcaption>Selma Bouvier</figcaption>
+	</figure>
+	<figure id="foto04">
+		<img src="img/simpsons/639639-patty_bouvier.png" alt="">
+		<figcaption>Patty Bouvier</figcaption>
+	</figure>
+	<figure id="foto05">
+		<img src="img/simpsons/Abe_Simpson.png" alt="">
+		<figcaption>Abe Simpson</figcaption>
+	</figure>
+	<figure id="foto06">
+		<img src="img/simpsons/Bart_Simpson_200px.png" alt="">
+		<figcaption>Bart Simpson</figcaption>
+	</figure>
+	<figure id="foto07">
+		<img src="img/simpsons/homer.png" alt="">
+		<figcaption>Homer J. Simpson</figcaption>
+	</figure>
+	<figure id="foto08">
+		<img src="img/simpsons/Marge_Simpson.png" alt="">
+		<figcaption>Marge Simpson</figcaption>
+	</figure>
+	<figure id="foto09">
+		<img src="img/simpsons/SantasLittleHelper.png" alt="">
+		<figcaption>Pequeño ayudante de santa claus</figcaption>
+	</figure>
+	</section>
+		<figure id="ventana">
+			<div  onclick="this.parentElement.style.display='none'">
+				&#215;
+			</div>
+		<img src="" alt="">
+		<figcaption>foto9</figcaption>
+		<button>Anterior</button><button>Siguiente</button>
+	</figure>
+	<footer>
+		<button>Simpsons</button> <button>Padre de Familia</button>
+		<button>American Dad</button> <button>South Park</button>
+	</footer>
+</body>
+</html>

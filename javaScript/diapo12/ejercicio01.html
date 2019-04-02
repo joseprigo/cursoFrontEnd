@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" type="text/css" href="css/ejercicio01.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>01 - funciones arrayadas</title>
+		<script>
+			var lista = [];
+			var flotante = 0;
+			var lista2 = [];
+
+			function sumar (a){
+				var sum = 0;
+				for(var i = 0; i<a.length; i++){
+					sum += a[i];
+				}
+				return sum
+			}
+			function maximo(a){
+				var max = a[0];
+				for (var i = 1; i<a.length; i++){
+					if (a[i]> max){
+						max = a[i];
+					}
+				}
+				return max;
+			}
+			function promedio(a){
+				var prom = 0;
+				for (var i = 0; i<a.length; i++){
+					prom += a[i];
+				}
+				return Math.round(prom / a.length * 100) / 100;
+			}
+			function escalar(li, num){
+				for(var i = 0; i<li.length; i++){
+					li[i] = li[i] * num;
+				}
+			}
+			function escalar2(li, num){
+				var tmp = [];
+				for(var i = 0; i<li.length; i++){
+					tmp[i] = li[i] * num;
+				}
+				return tmp;
+			}
+			
+			function anadir(entrada, unalista,mostrador){
+				unalista.push(parseInt(entrada.value));
+				document.getElementById(mostrador).innerHTML = unalista;
+			}
+			function quitar(unalista, mostrador){
+				unalista.pop();
+				document.getElementById(mostrador).innerHTML = unalista;
+			}
+
+			/*Lanza funciones que devuelven un valor*/
+			function ejecutor(unaFuncion, parametros, salida){
+				document.getElementById(salida).innerHTML = unaFuncion(parametros);
+			}
+		</script>
+	</head>
+	<body>
+		<h1>ejercicio 1</h1>
+		<label>añadir un numero al array</label><input type="number" onchange="anadir(this, lista, 'mostradorArray')">
+		<button onclick="quitar(lista, 'mostradorArray')">Quitar</button>
+		<br />
+		<output id="mostradorArray"></output>
+		<hr />
+		<button onclick="ejecutor(sumar,lista,'sumado')">Sumar</button>
+		<output id="sumado"></output>
+		<hr />
+		<button onclick="ejecutor(maximo,lista,'maxado')">Máximo</button>
+		<output id="maxado"></output>
+		<hr />
+		<button onclick="ejecutor(promedio,lista,'promado')">Promedio</button>
+		<output id="promado"></output>
+		<hr />
+		<label>Numero para escalar: </label><input type="number" onchange="flotante=parseFloat(this.value)" value="0" />
+		<br/>
+		<button onclick="escalar(lista, flotante); document.getElementById('escalado1').innerHTML = lista;">Escalar</button>
+		<output id="escalado1"></output>
+		<hr />
+		<br/>
+		<button onclick="lista2 = escalar2(lista, flotante); document.getElementById('escalado2').innerHTML = lista2;">Escalar 2</button>
+		<output id="escalado2"></output>
+		<hr />
+
+	</body>
+</html>

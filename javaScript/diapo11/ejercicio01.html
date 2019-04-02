@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" type="text/css" href="css/ejercicio01.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>01 - métodos de los arrays</title>
+	</head>
+	<body>
+		<h1>Métodos de los arrays</h1>
+		<p> var lista = [21,56,34,32,87,60,72,12]</p>
+		<script >
+			var lista = [21,56,34,32,87,60,72,12];
+		</script>
+		<section>
+			<h2>slice()</h2>
+			<p>Selecciona una parte del array y lo retorna.</p>
+			<script>
+				document.write(lista.slice(1,4));
+			</script>
+			
+		</section>
+		<section>
+			<h2>sort()</h2>
+			<p>Ordena los elementos de un array.</p>
+			<script>
+				document.write(lista.sort());
+			</script>
+			
+		</section>
+		<section>
+			<h2>splice()</h2>
+			<p>Añade o quita elementos de un array.</p>
+			<p>añadir:</p>
+			<script>
+				lista.splice(2,0, "Lemon", "Kiwi");
+				document.write(lista);
+			</script>
+			<p>quitar:</p>
+			<script>
+				lista.splice(2,2);
+				document.write(lista);
+			</script>
+			
+		</section>
+		<section>
+			<h2>toString()</h2>
+			<p>Convierte el array a String.</p>
+			<script>
+				lista.toString();
+				document.write( lista);
+				lista.slice();
+			</script>
+			
+		</section>
+		<section>
+			<h2>unshift()</h2>
+			<p>Añade elementos al inicio del array y retorna el nuevo tamaño.</p>
+			<script>
+				document.write(lista.unshift("hola"));
+				document.write(lista);
+			</script>
+			
+		</section>
+		<section>
+			<h2>valueOf()</h2>
+			<p>Retorna el valor primitivo de un array.</p>
+			<script>
+
+				document.write(lista.valueOf());
+			</script>
+			
+		</section>
+		<section>
+			<h2>concat()</h2>
+			<p>Une dos o más arrays</p>
+			<p> var listab = [false, false, false, true, 43]</p>
+			<script>
+				var listab = [false, false, false, true, 43];
+				document.write(lista.concat(listab));
+			</script>
+			
+		</section>
+		<section>
+			<h2>indexOf()</h2>
+			<p>Busca un elemento en el array y retorna su posición.</p>
+			<script>
+				document.write(lista.indexOf(false));
+			</script>
+			
+		</section>
+		<section>
+			<h2>join()</h2>
+			<p>Junta los elementos de un array en un String.</p>
+			<script>
+				document.write(lista.join());
+				lista.slice;
+			</script>
+			
+		</section>
+		<section>
+			<h2>lastIndexOf()</h2>
+			<p>Busca la última aparición de un elemento en el array y retorna la posición.</p>
+			<script>
+				document.write(lista.lastIndexOf(43));
+				lista.slice;
+			</script>
+			
+		</section>
+		<section>
+			<h2>pop()</h2>
+			<p>Quita el último elemento del array y lo retorna.</p>
+			<script>
+				document.write(lista.pop());
+			</script>
+			
+		</section>
+		<section>
+			<h2>push()</h2>
+			<p>Añade un nuevo elemento al final del array y retorna su tamaño</p>
+			<script>
+				document.write(lista.push(5));
+			</script>
+			
+		</section>
+		<section>
+			<h2>reverse()</h2>
+			<p>Invierte el orden de los elementos.</p>
+			<script>
+				document.write(lista.reverse());
+			</script>
+			
+		</section>
+		<section>
+			<h2>shift()</h2>
+			<p>Quita el primer elemento del array y lo retorna.</p>
+			<script>
+				document.write(lista.shift());
+			</script>
+			
+		</section>
+
+	</body>
+</html>

@@ -1,0 +1,64 @@
+/*Elementos estructurales*/
+main {
+	width: 65%;
+}
+nav {
+	width: 25%;
+}
+
+main, nav {
+	display: inline-block;
+	vertical-align:top;
+}
+
+main article {
+	display: inline-block;
+	vertical-align: top;
+}
+
+
+/*Links y sus atributos*/
+a[href^="https"] {
+	font-weight: bold;
+	color: #084;
+}
+
+/*decoracones varias: Textos, títulos.... */
+
+h1 {
+	color: #A00;
+}
+
+#azul:target {
+	color: #00A;
+}
+h2 {
+	text-decoration: underline;
+}
+/*El primer párrafo tras cada H2 tiene que estar en negrita.*/
+h2+p{
+	font-weight: bold;
+}
+
+/*Los párrafos tienen que estar en cursiva.*/
+p {
+	font-style: italic;
+}
+
+/*e) Las imágenes tienen que tener tamaño 100px100px.*/
+img{
+	width: 100px;
+	height: 100px;
+}
+
+/*Sólo los Párrafos que estén directamente
+ dentro del main (hijos directos)*/
+main>p{
+	background-color: #AAA;
+	border-radius: 5px;
+}
+
+#letras:target{
+	font-size: 2em;
+}
+

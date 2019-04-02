@@ -1,0 +1,28 @@
+
+	body{
+		margin: 200px;
+	}
+	img, div{
+		border-radius: 20px;
+		border: solid 1px black;
+	}
+
+	.carta{
+		position:relative;
+		width: 200px; height: 280px;
+		transform-style: preserve-3d;
+		transition: 5s;
+	}
+	.carta:hover{transform: rotateY(360deg) rotateZ(30deg);}
+	.carta>img{
+		position: absolute;
+		height: 280px; width: 200px;
+	}
+	.carta .frontal{backface-visibility:hidden;}
+	.carta .trasera{
+		transform: rotateY(180deg);
+		backface-visibility:hidden;
+	}
+
+
+	

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" type="text/css" href="css/ejercicio01.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>07 - Agencia de paquetería</title>
+		<script type="text/javascript">
+			const PERCIOFIJO = 2;
+			const INCREMENTOCM3 = 0.005;
+			const SUPLEMENTOGR = 0.1
+			function precioFinal(){
+				var alto = parseFloat(document.getElementById("alto").value);
+				var largo = parseFloat(document.getElementById("largo").value);
+				var ancho = parseFloat(document.getElementById("ancho").value);
+				var peso = 1000 * parseFloat(document.getElementById("peso").value);
+				var volumen = alto * largo * ancho;
+				var resultado = PERCIOFIJO + INCREMENTOCM3 * volumen + SUPLEMENTOGR * (peso / 100);
+				document.getElementById("resultado").innerHTML = resultado.toFixed(2);
+				
+			}
+		</script>
+	</head>
+	<body>
+		<h1>Calcular Costes de envío</h1>
+		<section>
+			<label>Alto</label><input type="number" id="alto" value="0" /><span>cm</span>
+			<br />
+			<label>Largo</label><input type="number" id="largo" value="0" /><span>cm</span>
+			<br />
+			<label>Ancho</label><input type="number" id="ancho" value="0" /><span>cm</span>
+			<br />
+			<label>Peso</label><input type="number" id="peso" value="0" /><span>kg</span>
+			<br />
+			<button onclick="precioFinal()">Calcular</button>
+			<br />
+			<label>Precio: </label><output id="resultado"></output><span> €</span>
+			<br />
+		</section>
+		<section>
+			<img src="img/paquete.jpg" />
+		</section>
+	</body>
+</html>

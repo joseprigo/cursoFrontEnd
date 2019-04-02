@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" type="text/css" href="css/ejercicio01.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>01 - Piedra papel o tijeras</title>
+		<script type="text/javascript">
+			var part = 0;
+			var gana = 'nadie';
+			var vict = 0;
+			var perd = 0;
+			var empa = 0;
+			function rango(min, max){
+				return Math.floor(Math.random()*(max-min+1)+min);
+			}
+			function esVictoria(a,b){
+				if(a == 0 && b == 2 || a == 1 && b == 0 || a == 2 && b == 1){
+					return true;
+				}else{
+					return false;
+				}
+			}
+
+			function dibujarRecuadro(jugador, opcion){
+				if(opcion == 0){
+					document.getElementById(jugador).className = "piedra";
+				}else if(opcion == 1){
+					document.getElementById(jugador).className = "papel";
+				}else{
+					document.getElementById(jugador).className = "tijeras";
+				}
+			}
+
+			function jugar(usuario){
+				var maquina = rango(0,2);
+				dibujarRecuadro("jugador1", usuario);
+				dibujarRecuadro("jugador2", maquina);
+				if (maquina == usuario){
+					gana = "Nadie";
+					empa++;
+				}else if (usuario == 0 && maquina == 2 || usuario == 1 && maquina == 0 || usuario == 2 && maquina == 1){
+					gana = "Jugador";
+					vict++;
+				}else{
+					gana = "Máquina";
+					perd++;
+				}
+				part++;
+				document.getElementById("msg").innerHTML = "GANA: " + gana;
+				document.getElementById("partidas").innerHTML = part;
+				document.getElementById("ganadas").innerHTML = vict;
+				document.getElementById("perdidas").innerHTML = perd;
+				document.getElementById("empatadas").innerHTML = empa; 
+
+			}
+		</script>
+	</head>
+	<body>
+		<h1>Juego de Piedra papel o tijeras</h1>
+		<main>
+			<section id="tablero">
+				<div>
+					<h2>Jugador 1</h2>
+					<div id="jugador1"></div>
+				</div>
+				<div>
+					<h2>Jugador 2</h2>
+					<div id="jugador2"></div>
+				</div>
+			</section>
+			<h2 id="msg"></h2>
+			<section id="botones">
+				<h2>Selecciona tirada</h2>
+				<div class="piedra" onclick="jugar(0)"></div>
+				<div class="papel" onclick="jugar(1)"></div>
+				<div class="tijeras" onclick="jugar(2)"></div>
+			</section>
+			<aside>
+				<h2>Estadísticas</h2>
+				<ul>
+					<li>Pardias: <span id="partidas"></span></li>
+					<li>Ganadas: <span id="ganadas"></span></li>
+					<li>Perdidas: <span id="perdidas"></span></li>
+					<li>Empatadas: <span id="empatadas"></span></li>
+				</ul>
+			</aside>
+		</main>
+	</body>
+</html>

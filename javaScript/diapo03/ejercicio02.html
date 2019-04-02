@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" type="text/css" href="css/ejercicio01.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>02 - área triángulo rectángulo</title>
+	<script type="text/javascript">
+
+		function area(){
+			var base = parseFloat(document.getElementById("base").value);
+			var altura = parseFloat(document.getElementById("altura").value);
+			document.getElementById("resultado").innerHTML = base * altura/ 2;
+		}
+	</script>
+	</head>
+	<body>
+		<h1>Calcular áreas de triángulos</h1>
+		<section>
+			<label>base</label><input type="number" id="base" name="" />
+			<br />
+			<label>Altura</label><input type="number" id="altura" name="" />
+			<br />
+			<button onclick="area()"> Calcular</button>
+
+			<br />
+			<label>Resultado: </label><output id="resultado"></output>
+			<br />
+		</section>
+		<section>
+			<img src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Rtriangle.svg" />
+		</section>
+	</body>
+</html>

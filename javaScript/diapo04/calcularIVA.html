@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" type="text/css" href="css/calculariva.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Calculadora IVA</title>
+		<script type="text/javascript">
+			function calcularIVA(){
+				var imp = document.getElementById("importe").value;
+				var iva = document.getElementById("tipoIva").value;
+				var res = imp*iva;
+				document.getElementById("resultado").innerHTML = res.toFixed(2);
+			}
+		</script>
+	</head>
+	<body>
+	<label for="">Importe sin IVA</label>
+	<input type="number" id="importe" value="0"/>
+	<label for="">Euros</label>
+	<br />
+	<select name="" id="tipoIva">
+		<option value="1.04">IVA superreducido (4%)</option>
+		<option value="1.10">IVA reducido (10%)</option>
+		<option value="1.21">IVA general (21%)</option>
+	</select>
+	<br />
+	<button onclick="calcularIVA()">calcular</button>
+	<hr />
+	<p>El precio final con IVA es de: <span id=resultado></span> €.</p>
+	</body>
+</html>

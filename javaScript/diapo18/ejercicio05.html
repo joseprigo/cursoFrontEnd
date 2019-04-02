@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" type="text/css" href="css/ejercicio05.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>05 - Ludopatía, el juego online</title>
+	<script>
+		function rango(min, max){
+			return Math.floor(Math.random() * (max - min + 1) + min);
+		}
+		function tirarDado(){
+			var caras = ["uno", "dos", "tres", "cuatro", "cinco", "seis"];
+			var resultado = rango(0,5);
+			document.getElementById("dado").src = "img/" + caras[resultado] + ".jpg";
+		}
+	</script>
+</head>
+<body>
+	<button onclick="tirarDado()">Tirar dado!</button>
+	<hr />
+	<img id="dado" src="img/dado.jpg" />
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title> Agencia de Viajes</title>
+		<link rel="shortcut icon" type="image/png" href="img/favicon.ico"/>
+		<link rel="stylesheet" type="text/css" href="css/estilos.css" />
+	</head>
+	<body>
+		<header>
+			<figure id="logoPrincipal">
+				<img src="img/viajespuntocom.png" alt="Agencia de viajes punto com" />
+				<figcaption> volarás </figcaption>
+			</figure>
+			<div id="titulo">
+			<h1> Agencia de viajes punto com</h1>
+		</div>
+		<a id="linkLog" href="registro.html">
+				<figure id="logoLogin">
+					<img id="loginPic" src="img/logim.png" alt="Entra o Regístrate" title="Entra o Regístrate" />
+				<figcaption>Zona miembros</figcaption>
+				</figure>
+			</a>
+		</header>
+		
+		<nav>
+			<ul>
+				<li><a href="index.html" title="ir a inicio"> Inicio</a></li>
+				<li><a href="barcelona.html" title="ver viajes a Barcelona"> Barcelona</a></li>
+				<li><a href="paris.html" title="ver a Paris"> París</a></li>
+				<li><a href="roma.html" title="ver a Roma"> Roma</a></li>
+				<li><a id="dondeEstamos" href="contacto.html" title="Contacta con nosotros"> contacto</a></li>
+			</ul>
+		</nav>
+		<main>
+			<section class="tipoRutas">
+				<form method="POST" action="index.html">
+			<fieldset>
+				<legend> Datos y mensaje</legend>
+				<label>Nombre</label> <input type="text" name="nombre" required="required" autofocus="autofocus" pattern="[A-Z a-z]{1,20}" title="No se permiten letras ni simbolos especiales" />
+				<br />
+				<label>Apellidos:</label> <input type="text" name="nombre" required="required" pattern="[A-Z a-z]{1,20}" title="No se permiten letras ni simbolos especiales"/>
+				<br />
+				<label>Tu email:</label> <input type="email" name="email" required="required" />
+				<br />
+				<label for="motivo">Motivo:</label>
+				<select id="motivo">
+					<option value="consulta"> Consulta general</option>
+					<option value="prioridad1"> Agradercer los servicios</option>
+					<option value="pesao">quejas</option>	
+				</select>
+				<br />
+				<label> Mensaje:</label>
+				<br />
+				<textarea id="textoMail" name="textoMail" placeholder="Tu mensaje..." cols="70" rows="5"></textarea>
+				
+				
+				<br />
+
+			</fieldset>
+			<input id="singButton" type="submit" name="submit" value="Enviar" />
+		</form>
+
+			</section>
+			<section class="tipoRutas">
+				<figure>
+					<img src="img/airplane.jpeg">
+					<figcaption>Responderemos en breve</figcaption>
+				</figure>
+			</section>
+
+			<section class="tipoRutas">
+				<figure>
+					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d629.185509258737!2d2.190059080202058!3d41.39738001515264!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a4a2efe63f46cd%3A0x2ce5e151b3383c3c!2sNETMIND%2C+SL!5e0!3m2!1sca!2ses!4v1549366998769" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+					<figcaption>Responderemos en breve</figcaption>
+				</figure>
+			</section>
+
+		</main>
+		<footer>
+			by Josep Rigo
+		</footer>
+	</body>
+</html>

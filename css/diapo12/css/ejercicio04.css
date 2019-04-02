@@ -1,0 +1,154 @@
+*{
+	font-family: verdana;
+	text-align: justify;
+}
+html{
+	background-image: linear-gradient( to bottom, #FFF, #99C);
+}
+
+body{
+	width: 90%;
+	margin: auto;
+}
+
+p {
+	font-size: 2vw;
+}
+input {
+	background-color: #393;
+	z-index: 10;
+}
+
+/**
+*****  Elementos Fijos ********************************************************
+**/
+
+body>div{
+	position: fixed;
+	z-index: 11;
+}
+/** carrito de la compra**/
+body>div:first-of-type{
+	top:3vw;
+	right:0;
+	background-image: linear-gradient(rgba(255,255,255,0.5), rgba(205,205,205,1));
+	padding: 0.8vw;
+	text-align: center;
+	width: 15vw;
+	border-radius: 5%;
+	font-size: 0.7vw;
+	border: 0.3vw solid #C33;
+	box-shadow: 1vw 1vw 1vw #333;
+}
+body>div:first-of-type>img{
+	width: 8vw;
+	box-shadow: 1vw 1vw 1.5vw #333;
+	border-radius: 50%;
+}
+
+body>div:first-of-type>p{
+	font-size: 1.5vw;
+	text-align: left;
+
+	text-shadow: 1vw 1vw 1.5vw #333;
+}
+
+/**
+*****  CABEZERA ***************************************************************
+**/
+header {
+	background-image: url("../img/gamingk.jpg");
+	background-size: 100vw;
+	background-repeat: no-repeat;
+	color: #f9f9f9;
+	text-shadow: 0.3vw 0.3vw 0.5vw #000;
+	padding: 7vw 2vw 5vw;
+}
+h1{
+	font-size: 4vw;
+	margin-bottom: 0;
+}
+
+
+/**
+*****  BARRA DE NAVEGACIÓN *****************************************************
+**/
+
+nav{
+	display: flex;
+	position: sticky;
+	top:0;
+	z-index: 10;
+
+}
+
+nav>div:first-of-type{
+	flex: 1;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: left;
+}
+nav>div:first-of-type{
+	background-color: #FCFCFC;
+	padding: 0.1vw 1vw;
+
+}
+nav>div:first-of-type>a{
+	background-color: #99C;
+	padding: 0.5vw;
+	display: inline-block;
+	margin-right: 1vw;
+	text-decoration: none;
+}
+nav img{
+	width: 2vw;
+}
+
+nav>div:last-of-type{
+	background-color: rgba(255, 255, 255, 0.5);
+	z-index: 50;
+}
+/**
+***** CUERPO DE LA PÁGINA *************************************************
+*/
+article img {
+	width: 20vw;
+}
+article {
+	display: flex;
+	background-color: #FEFEFE;
+	margin: 2vw 0vw;
+	padding: 0.5vw;
+}
+
+article>div:first-of-type{
+	flex:1;
+	display: flex;
+	align-items: center;
+}
+
+article>div:nth-of-type(2){
+	flex:3;
+}
+
+article>div:nth-of-type(3){
+	flex:1;
+	position: relative;
+	color: #66F;
+	z-index: 0;
+}
+
+article>div:nth-of-type(3)>p{
+	position: absolute;
+	left: 40%;
+	top: 10%;
+	font-weight: bold;
+	text-shadow: 0vw 0vw 1.5vw #000;
+
+}
+
+article>div:nth-of-type(3)>button{
+	position: absolute;
+	right: 40%;
+	bottom: 40%;
+}

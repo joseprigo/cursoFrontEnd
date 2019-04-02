@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" type="text/css" href="css/ejercicio02.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>02 - hacer unas funciones</title>
+	<script type="text/javascript">
+		function atriangulo(base, altura){
+			return base*altura/2;
+		}
+		function arectangulo(base, altura){
+			return base*altura;
+		}
+		function acirculo(radio){
+			return Math.PI*radio**2;
+		}
+
+	</script>
+</head>
+<body>
+	<h1>Calcular areas</h1>
+	<h2>Área del Triángulo</h2>
+	<label>Base</label> <input type="number" id="baseTri" /> <br />
+	<label>Altura</label> <input type="number" id="altTri" /> <br />
+	<button onclick= "areaTri.innerHTML = atriangulo(baseTri.value, altTri.value) "> Calcular</button> <output id="areaTri"></output>
+
+
+	<h2>Área del Rectángulo</h2>
+	<label>Base</label> <input type="number" id="baseRect" /> <br />
+	<label>Altura</label> <input type="number" id="altRect" /> <br />
+	<button onclick= "areaRect.innerHTML = arectangulo(baseRect.value, altRect.value) "> Calcular</button> <output id="areaRect"></output>
+
+
+	<h2>Área del Círculo</h2>
+	<label>Radio</label> <input type="number" id="radio" /> <br />
+	<button onclick= "areaCirc.innerHTML = acirculo(radio.value) "> Calcular</button> <output id="areaCirc"></output>
+</body>
+</html>

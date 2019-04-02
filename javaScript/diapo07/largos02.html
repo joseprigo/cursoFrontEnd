@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" type="text/css" href="css/ejercicio05.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>02 - Escalar</title>
+	<script>
+		function doblar(imagen, valor){
+			imagen.height*=valor;
+			imagen.width*=valor;
+		}
+	</script>
+</head>
+<body>
+
+	<h1>Escalar (clicka en las fotos)</h1>
+	<img src="img/frontal.png" onclick="doblar(this, 0.5)" height="100" width="50" id="foto"> <br />
+	 
+	<img src="img/frontal.png" onclick="doblar(this, 1.5)" height="100" width="50" id="foto"> <br />
+</body>
+</html>

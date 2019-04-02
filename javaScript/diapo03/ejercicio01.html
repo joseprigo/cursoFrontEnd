@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" type="text/css" href="css/ejercicio01.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>01 - Circunferencia</title>
+		<script type="text/javascript">
+			const PI = 3.1416;
+			function perimetro(){
+				var radio = parseFloat(document.getElementById("radio").value);
+				document.getElementById("perimetro").innerHTML = 2 * PI * radio;
+			}
+			function area(){
+				var radio = parseFloat(document.getElementById("radio").value);
+				document.getElementById("area").innerHTML = PI * radio ** 2;
+			}
+			function diametro(){
+				var radio = parseFloat(document.getElementById("radio").value);
+				document.getElementById("diametro").innerHTML = radio * 2;
+			}
+		</script>
+	</head>
+	<body>
+		<h1>Calcular circunferencias</h1>
+		<section>
+			<label>Radio</label><input type="number" id="radio" name="" />
+			<br />
+			<button onclick="perimetro()"> Perímetro</button>
+			<button onclick="area()">Área</button>
+			<button onclick="diametro()">Diámetro</button>
+
+			<br />
+			<label>Perímetro: </label><output id="perimetro"></output>
+			<br />
+			<label>Área: </label><output id="area"></output>
+			<br />
+			<label>Diámetro: </label><output id="diametro"></output>
+			<br />
+		</section>
+		<section>
+			<img src="https://upload.wikimedia.org/wikipedia/commons/1/1d/CIRCLE_1.svg" />
+		</section>
+	</body>
+</html>

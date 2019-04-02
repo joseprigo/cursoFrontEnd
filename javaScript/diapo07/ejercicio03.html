@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" type="text/css" href="css/ejercicio03.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>03 - Descuentos</title>
+	<script type="text/javascript">
+		function descuento(precio, descuento){
+			if (precio < 0 || descuento < 0 || descuento > 100) {
+				document.getElementById("resultado").innerHTML = NaN;
+			}else{
+				document.getElementById("resultado").innerHTML = precio*(1-descuento/100);
+			}
+		}
+	</script>
+</head>
+<body>
+	<h1>¡Descuentos!</h1>
+	<label>Precio</label> <input type="number" id="precioI" /> <br />
+	<label>Descuento</label> <input type="number" id="descuentoI" /><span>%</span> <br />
+	<button onclick= "descuento(parseInt(precioI.value), parseInt(descuentoI.value)) "> Calcular</button> <output id="resultado"></output>
+
+</body>
+</html>

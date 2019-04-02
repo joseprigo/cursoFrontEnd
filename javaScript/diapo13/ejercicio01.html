@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" type="text/css" href="css/ejercicio01.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>01 - Al menos 6 métodos de fechas</title>
+	</head>
+	<body>
+		<script>
+			var ahora = new Date();
+			var any = ahora.getFullYear();
+			var mes = ahora.getMonth() + 1;
+			var diaM = ahora.getDate();
+			var milis = ahora.getTime();
+			var difUTC = ahora.getTimezoneOffset();
+			var fecha20 = new Date();
+			fecha20.setHours(20);
+
+			document.write("Feca actual: " + diaM + " del " + mes + " de " + any + "<br />");
+			document.write("Tiempo unix, getTime(): " + milis + "<br />");
+			document.write("Minutos respecto a UTC, getTimezoneOffset(): " + difUTC + "<br />");
+			document.write("Fecha de hoy a las 8 de la noche: " + fecha20.toString() + "<br />");
+			document.write("Fecha actual enUTCS: " + ahora.toUTCString() + "<br />");
+			document.write("Fecha actual timeString: " + ahora.toTimeString() + "<br />");
+		</script>
+	</body>
+</html>

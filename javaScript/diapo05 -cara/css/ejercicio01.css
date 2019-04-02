@@ -1,0 +1,60 @@
+body {
+	display: flex;
+	flex-wrap: wrap;
+}
+section{
+	flex: 1;
+	min-width: 400px;
+}
+img:not([src="img/worker.png"]){
+	width: 100%;
+}
+
+label{
+	display: inline-block;
+	padding-right: 0.2vw;
+	width: 30%;
+	text-align: right;
+}
+
+#rectanguloDibujo{
+	border: 0.5vw solid #333;
+	background-color: #0FF;
+	text-align: center;
+	padding: 3vw;
+	margin: 6vw 2vw;
+}
+
+#pantalla{
+	margin: 1vw;
+	border-radius: 1vw;
+	padding: 2vw;
+	border: 1px solid #333;
+}
+
+#pantalla  output {
+	font-weight: bold;
+}
+
+#triangulo{
+	width: 412px;
+}
+
+.equilatero {
+	background: url("../img/trian.jpg");
+	background-size: 1300px;
+	height: 350px;
+}
+
+.isosceles {
+	background: url("../img/trian.jpg");
+	background-size: 1300px;
+	background-position: -400px 0px;
+	height: 350px;
+}
+.escaleno {
+	background: url("../img/trian.jpg");
+	background-size: 1300px;
+	background-position: -850px 0px;
+	height: 350px;
+}

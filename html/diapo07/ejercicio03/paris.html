@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title> Agencia de Viajes</title>
+		<link rel="shortcut icon" type="image/png" href="img/favicon.ico"/>
+		<style type="text/css">
+		/** Parte Común a todas las páginas**/
+			body{
+				text-align: justify;
+				margin: 0px;
+				font-family: arial;
+			}
+			header {
+				background-color: #b3ecff;
+			}
+			#titulo, #logoPrincipal{ 
+				display: inline-block;
+				vertical-align: middle;
+			}
+			nav {
+				height: 60px;
+				background-color: #262626;
+			}
+
+			main {
+				min-height: 580px;
+			}
+
+			section {
+				display: inline-block;
+			}
+
+			ul {
+				margin: 0; 
+				list-style: none;
+				display: flex;
+			}
+			li{
+				margin: 5px;
+				padding: 5px;
+			}
+			/* unvisited link */
+			a:link {
+				text-decoration: none;
+				color: #FFFFFF;
+			}
+
+			/* visited link */
+			a:visited {
+				color: #FFFFFF;
+			}
+
+			/* mouse over link */
+			a:hover {
+				font-weight: bold;
+				color: #FFFFFF;
+				font-size: 40px
+			}
+
+			/* selected link */
+			a:active {
+				color: #FFFFFF;
+			}
+			footer {
+				padding: 40px 80px 10px 20px;
+				text-align: right;
+				background-color: #262626;
+				height: 150px;
+				color: #FFFFFF;
+			}
+			#dondeEstamos{
+				font-weight: bold;
+				color: #FFFFFF;
+				font-size: 40px;
+			}
+
+			/**
+			chuleta del padding (rel)
+			padding: 25px 50px 75px 100px;
+					top -right - bottom - left
+			**/
+			p, h1, h2 {
+				padding-right: 5px;
+				padding-left: 5px; 
+			}
+			/** FIN PARTE COMÚN **/
+
+			.fotoCentrada {
+				margin: 0 auto;
+     			max-width: 400px; 
+			}
+
+			.imgDetalle{
+				width: 430px;
+			}
+
+			.tipoRutas{
+				max-width: 900px;
+				padding: 10px 10px 40px 10px;
+			}
+			.linkExt:link, .linkExt:visited{
+				color: #000;
+				font-weight: bold;
+			}
+			.linkExt:hover{
+				font-size: 16px;
+				color: #00F;
+
+			}
+
+		</style>
+	</head>
+	<body>
+		<header>
+			<figure id="logoPrincipal">
+				<img src="img/viajespuntocom.png" alt="Agencia de viajes punto com" />
+				<figcaption> volarás </figcaption>
+			</figure>
+			<div id="titulo">
+			<h1> Agencia de viajes punto com</h1>
+		</div>
+		</header>
+		
+		<nav>
+			<ul>
+				<li><a href="index.html" title="ir a inicio"> Inicio</a></li>
+				<li><a href="barcelona.html" title="ver viajes a Barcelona"> Barcelona</a></li>
+				<li><a id="dondeEstamos" href="paris.html" title="ver a Paris"> Paris</a></li>
+				<li><a href="roma.html" title="ver a Roma"> Roma</a></li>
+			</ul>
+		</nav>
+		<main>
+			<section>
+				<h2> París, ser parisino no es haber nacido en Paris, sino renacer allí</h2>
+				<p> Lorem <a href="https://es.wikipedia.org/wiki/Par%C3%ADs" target="_blank" class="linkExt">París
+</a> ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				</p>
+
+				<p>
+					The Parisii, a sub-tribe of the Celtic Senones, inhabited the Paris area from around the middle of the 3rd century BC. One of the area's major north–south trade routes crossed the Seine on the île de la Cité; this meeting place of land and water trade routes gradually became an important trading centre. The Parisii traded with many river towns (some as far away as the Iberian Peninsula) and minted their own coins for that purpose.
+				</p>
+
+				
+			</section>
+			<section class="tipoRutas">
+				<h2> El edificio más famoso del mundo</h2>
+				<p> La <a href="https://en.wikipedia.org/wiki/Eiffel_Tower" target="_blank" class="linkExt"> Torre Effiel
+</a>, dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				</p>
+
+				<figure class="fotoCentrada">
+					<img class="imgDetalle" src="img/torreEfiel.jpg" />
+					<figcaption> La torre Efiel desde el campo de Marte</figcaption>
+				</figure>
+			</section>
+			<section class="tipoRutas">
+				<h2> Visita las gárgolas</h2>
+				<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				</p>
+
+				<figure class="fotoCentrada">
+					<img class="imgDetalle" src="img/gargola.jpg" />
+					<figcaption> Una de las gárgolas de la Catedral de Notre Dame</figcaption>
+				</figure>
+			</section>
+			<section class="tipoRutas">
+				<h2> Cena crucero en el Sena</h2>
+				<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				</p>
+
+				<figure class="fotoCentrada">
+					<img class="imgDetalle" src="img/cena_paris.jpg" />
+					<figcaption> Ese de ahí podría ser usted </figcaption>
+				</figure>
+			</section>
+			<section class="tipoRutas">
+				<h2> Tours por el centro</h2>
+				<p> También ofrecemos Tours guiados con bus a través de la agencia local Baguette Olalá.
+				</p>
+
+				<figure class="fotoCentrada">
+					<img class="imgDetalle" src="img/tour_paris.jpg" />
+					<figcaption> Bus turístico cerca del Arco de Triumfo </figcaption>
+				</figure>
+			</section>
+
+		</main>
+		<footer>
+			by Josep Rigo
+		</footer>
+	</body>
+</html>

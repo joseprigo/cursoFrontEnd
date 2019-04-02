@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" type="text/css" href="css/ejercicio01.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>04 - Circunferencia</title>
+		<script type="text/javascript">
+			const PI = 3.1416;
+			function calcular(){
+				var radio = parseFloat(document.getElementById("radio").value);
+				var ope = document.getElementById("nivel").value;
+				var resultado = "";
+				switch(ope){
+					case "per":
+					var per = 2 * PI * radio;
+					resultado = "El perímetro de este círculo es = " + per.toFixed(2);
+					break;
+					case "ari":
+					
+					var ari =  PI * radio ** 2;
+					resultado = "El area de este círculo es = " + ari.toFixed(2);
+					default:
+					var dia = radio * 2;
+					resultado = "El diámetro de este círculo es = " + dia.toFixed(2);
+				}
+				document.getElementById("resultado").innerHTML = resultado;
+			}
+		</script>
+	</head>
+	<body>
+		
+		<section>
+		<h1>Calcular circunferencias</h1>
+		<label >radio</label>
+		<input id="radio" type="number">
+		<br>
+		<label >Operacion</label>
+		<select id="nivel">
+			<option value="per">Perímetro</option>
+			<option value="ari">Área</option>
+			<option value="dia">Diámetro</option>
+		</select>
+		<br>
+		<hr>
+		<button onclick="calcular()">Calcular</button>
+		<div id="pantalla">
+			<output id="resultado"></output>
+		</div>
+	</section>
+		<section>
+			<img src="https://upload.wikimedia.org/wikipedia/commons/1/1d/CIRCLE_1.svg" />
+		</section>
+	</body>
+</html>

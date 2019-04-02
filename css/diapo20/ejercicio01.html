@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" type="text/css" href="css/ejercicio06.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Pelota que rota y bota</title>
+	<style type="text/css">
+		#campo{
+			background: green;
+			width: 800px;
+			height: 600px;
+			position: relative;
+		}
+		#basketball {
+			height: 100px; width: 100px;
+			position: absolute;
+			animation-name: botar, rotar, mover;
+			animation-duration: 1s, .6s, 2.3s;
+			animation-timing-function: cubic-bezier(.67,.06,.94,.74), linear, linear;
+			animation-iteration-count: infinite;
+			animation-direction: alternate, normal;
+		}
+		@keyframes botar {
+			from{top: 0px;}
+			to{top:500px;}
+		}
+		@keyframes rotar{
+			from{transform: rotateZ(0deg);}
+			to{transform: rotateZ(360deg);}
+		}
+
+		@keyframes mover {
+			from{left:0px;}
+			to{left:700px;}
+		}
+	</style>
+</head>
+<body>
+	<div id="campo">
+		<img id="basketball" src="img/basketball.png" />
+	</div>
+</body>
+</html>

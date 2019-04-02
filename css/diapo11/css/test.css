@@ -1,0 +1,17 @@
+main {
+	border: 1px dotted #F00;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-start;
+	align-content: space-around;
+}
+
+main>div{
+	border: 1px solid #000;
+	flex: 1;
+	min-width: 300px;
+}
+
+/*main>div:last-of-type{
+	flex: 2;
+}*/

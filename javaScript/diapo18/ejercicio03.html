@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" type="text/css" href="css/ejercicio03.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style type="text/css">
+		body{
+			display: flex;
+		}
+		section{
+			border: 1px solid black;
+			border-radius: 5%;
+		}
+		p{
+			min-width: 100px;
+			padding: 0.2vw 2vw;
+		}
+	</style>
+	<script>
+		document.addEventListener('DOMContentLoaded', function(event) {
+			var pes = document.getElementsByTagName("p");
+			for(let pe of pes){
+				pe.onclick = function(){this.remove();};
+			}
+});
+
+	</script>
+	<title>03 - </title>
+</head>
+<body>
+	<section>
+		<p>Esto es el párrafo 1</p>
+		<p>Esto es el párrafo 2</p>
+		<p>Esto es el párrafo 3</p>
+		<p>Esto es el párrafo 4</p>
+		<p>Esto es el párrafo 5</p>
+		<p>Esto es el párrafo 6</p>
+	</section>
+</body>
+</html>

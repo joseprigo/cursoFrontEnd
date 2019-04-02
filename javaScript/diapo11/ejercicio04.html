@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" type="text/css" href="css/ejercicio04.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>04 - Fibonacci</title>
+</head>
+<body>
+	<h1>Fibonacci</h1>
+	<p>Estos son los 20 primeros números de la sucesión de Fibonacci</p>
+	<script type="text/javascript">
+		var fibo = [1,1];
+		for (var i = 2; i< 20; i++){
+			fibo[i] = fibo[i-1] + fibo[i-2];
+		}
+		document.write(fibo);
+	</script>
+</body>
+</html>

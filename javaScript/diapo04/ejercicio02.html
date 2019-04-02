@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" type="text/css" href="css/ejercicio02.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>02 - Calcular notas</title>
+		<script type="text/javascript">
+			function calcularNotas(){
+				var n1 = parseFloat(document.getElementById("nota1").value);
+				var n2 = parseFloat(document.getElementById("nota2").value);
+				var n3 = parseFloat(document.getElementById("nota3").value);
+				var media = (n1 + n2 + n3) / 3;
+				if (media > 5){
+					window.alert("Aprobaste");
+				}else{
+					window.alert("Suspendiste");
+				}
+				
+			}
+		</script>
+	</head>
+	<body>
+		<label for="">Nota 1: </label>
+		<input type="number" id="nota1" value="0"/>
+		<br />
+		<label for="">Nota 2: </label>
+		<input type="number" id="nota2" value="0"/>
+		<br />
+		<label for="">Nota 3: </label>
+		<input type="number" id="nota3" value="0"/>
+		<br />
+		<button onclick="calcularNotas()">calcular</button>
+	</body>
+</html>

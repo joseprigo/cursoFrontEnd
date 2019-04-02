@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" type="text/css" href="css/ejercicio01.css" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>05 - calcular potencias</title>
+		<style type="text/css">
+			
+			
+		</style>
+		<script type="text/javascript">
+			function potencia(){
+				var base = parseFloat(document.getElementById("base").value);
+				var expo = parseFloat(document.getElementById("exponente").value);
+				var resu = 1;
+				if( expo >= 0 ){
+					for (let i = 0; i < expo; i ++){
+						resu *= base;
+					}
+				}else {
+					for (let i = expo; i < 0; i ++){
+						resu /= base;
+					}
+				}
+				document.getElementById("resultado").innerHTML = resu;
+			}
+		</script>
+	</head>
+	<body>
+		<h1>potencias (positivas y negativas)</h1>
+		<label>Base</label> <input type="number" id="base" /> <br />
+		<label>Exponente</label> <input type="number" id="exponente" /> <br />
+		<button onclick="potencia()"> Calcular</button>
+		<hr />
+		<label>Resultado: </label> <output id="resultado"></output>
+		
+	</body>
+</html>	

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" type="text/css" href="css/ejercicio02.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>02 - boton creador de elementos</title>
+</head>
+<script>
+	function creador(){
+		var figura = document.createElement("figure");
+		figura.classList.add("foto");
+		var imagen = document.createElement("img");
+		imagen.setAttribute("src", "http://www.creacionesabm.com/img/creacionesabm.png");
+		var descripcion = document.createElement("figcaption");
+		descripcion.innerHTML = "Bienvenido a Mi Página Web.";
+		figura.appendChild(imagen);
+		figura.appendChild(descripcion);
+		document.body.appendChild(figura);
+	}
+</script>
+<body>
+	<button onclick="creador()">CREADOR</button>
+</body>
+</html>

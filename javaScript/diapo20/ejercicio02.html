@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" type="text/css" href="css/ejercicio02.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>02 - temporizar acciones</title>
+	<style>
+		#rojo{
+			background-color: #F66;
+			position: fixed;
+			width: 60%;
+			height: 500px;
+			display: none;
+			left:20%;
+		}
+		#santas{
+			position: fixed;
+			width: 60%;
+			display: none;
+			left:20%;
+		}
+		#holaTexto{
+			position: fixed;
+			background-color: lightblue;
+			border-radius: lightgreen;
+			width: 60%;
+			display: none;
+			left:20%;
+		}
+
+	</style>
+</head>
+<body>
+	<button onclick="lanzadorT(this)">Empieza la acción</button>
+	<img id="santas" src="img/SantasLittleHelper.png" />
+	<div id="rojo"></div>
+	<div id="holaTexto"> <h1>HOLA</h1></div>
+</body>
+<script>
+	function lanzadorT(boton){
+		boton.onclick = "";
+		document.getElementById("santas").style.display = "block";
+		setTimeout(function(){
+			document.getElementById("santas").style.display = "none";
+			document.getElementById("rojo").style.display= "block";
+			setTimeout(function(){
+				document.getElementById("rojo").style.display= "none";
+				document.getElementById("holaTexto").style.display = "block";
+				setTimeout(function(){
+					document.getElementById("holaTexto").style.display= "none";
+					document.getElementsByTagName("button")[0].onclick = function(){
+						lanzadorT(document.getElementsByTagName("button")[0]);
+					};
+				},1000);
+			},2000);
+		},2000);
+	}
+</script>
+</html>

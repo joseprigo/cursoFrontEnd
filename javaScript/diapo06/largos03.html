@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" type="text/css" href="css/ejercicio01.css" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>03 -dibuja tabla</title>
+		<style type="text/css">
+			body {
+				background: yellow;
+			}
+			h1 {
+				border: 4px solid red;
+				padding: 5vw;
+				border-radius: 10vw;
+				background-color: #FFF;
+			}
+		</style>
+		<script type="text/javascript">
+			function tablear(){
+				var f = document.getElementById("filas").value;
+				var c = document.getElementById("columnas").value;
+				var htmlStr = "<table border='1'>";
+				for (var i = 1; i <= f; i++){
+					htmlStr += "<tr>";
+					for (var j = 1; j <= c; j++){
+						htmlStr += "<td> fila:" + i + "-col:" + j + "</td>";
+					}
+					htmlStr += "</tr>";
+				}
+				htmlStr += "</table>";
+				
+				document.getElementById("espacio").innerHTML = htmlStr;
+			}
+		</script>
+	</head>
+	<body>
+		<h1> Creador de tablas</h1>
+		<label> Filas: </label> <input type="number" id="filas" value="0" /><br />
+		<label> columnas: </label> <input type="number" id="columnas" value="0" /><br />
+		<button onclick="tablear()">Calcular</button> <br />
+		<div id="espacio"></div>
+	</body>
+</html>	

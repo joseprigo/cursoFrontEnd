@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" type="text/css" href="css/ejercicio01.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>01 - pruebas con strings</title>
+	</head>
+	<body>
+		<h1>Pruebas con Strings</h1>
+		<p> texto = "hola mundo" </p>
+		<article>
+			<h2>charAt()</h2>
+			
+			caracter en la posición 3:
+			<br />
+			<script>
+				var texto = "hola mundo";
+				document.write(texto.charAt(3));
+			</script>
+		</article>
+		<article>
+			<h2>concat()</h2>
+			Añadir una palabra al texto:
+			<br /> 
+			<script>
+				texto = texto.concat(" feliz");
+				document.write(texto);
+			</script>
+		</article>
+		<article>
+			<h2>replace()</h2>
+			cambiar la palabra 'feliz':
+			<br />
+			<script>
+				texto = texto.replace("feliz", "extraño");
+				document.write(texto);
+			</script>
+		</article>
+		<article>
+			<h2>indexOf()</h2>
+			En que posición está la palabra mundo?
+			<br />
+			<script>
+				document.write(texto.indexOf("mundo"));
+			</script>
+			<span></span>
+		</article>
+		<article>
+			<h2>lastindexOf()</h2>
+			En que posición termina la palabra mundo?
+			<br />
+			<script>
+				document.write(texto.lastIndexOf("mundo"));
+			</script>
+		</article>
+		<article>
+			<h2>search()</h2>
+			busca la palabra extraño <br />
+			<script>
+				document.write(texto.search("extraño"));
+			</script>
+		</article>
+		<article>
+			<h2>slice()</h2>
+			corta el texto por caracter (de la posición 2 a la 8): 
+			<br />
+			<ul>
+				<script>
+					var palabras = texto.slice();
+					for (var i = 0; i<palabras.length; i++){
+						document.write("<li>" + palabras[i] + "</li>");
+					}
+				</script>
+			</ul>
+			<span></span>
+		</article>
+		<article>
+			<h2>split()</h2>
+			separa el texto por espacios
+			<br />
+			<script>
+				var palabras = texto.split(" ");
+					for (var i = 0; i<palabras.length; i++){
+						document.write("<li>" + palabras[i] + "</li>");
+					}
+			</script>
+		</article>
+		<article>
+			<h2>substring()</h2>
+			substring(1,4)
+			<br />
+			<script>
+				document.write(texto.substring(1,4));
+			</script>
+		</article>
+		<article>
+			<h2>toLowerCase()</h2>
+			pasar a mínusculas el texto2 = HOLA MUNDO:
+			<br />
+			<script>
+				var texto2 = "HOLA MUNDO"; 
+				document.write(texto2.toLowerCase());
+			</script>
+		</article>
+		<article>
+			<h2>toUpperCase()</h2>
+			pasar a mayúscula el texto original
+			<br />
+			<script>
+				document.write(texto.toUpperCase());
+			</script>
+		</article>
+		<article>
+			<h2>trim()</h2>
+			Elimina los espacios alrededor de un string:
+			<br />
+			<script>
+				var textoEspaciado = "             aquí había muchos espacios                  ";
+
+				document.write(textoEspaciado.trim());
+			</script>
+			<span></span>
+		</article>
+	</body>
+</html>

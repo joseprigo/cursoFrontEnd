@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" type="text/css" href="css/ejercicio01.css" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>01 - implementar bucles</title>
+		<script type="text/javascript">
+			function divisores(){
+				var n = parseInt(document.getElementById("numero").value);
+				var res = "";
+				for (var i = 1; i < n; i++){
+					if(n % i == 0){
+						res += i + ", ";
+					}
+				}
+				// En el último, que siempre es el mismo numero, añadimos este número y un punto.
+				res += i + ".";
+				document.getElementById("resultado").innerHTML = res;
+			}
+		</script>
+	</head>
+	<body>
+		<h1> Divisores</h1>
+		<label> numero: </label> <input type="number" id="numero" value="0" onchange="divisores()" /><br />
+		<hr />
+		<label>resultado: </label><output id="resultado"></output>
+	</body>
+</html>

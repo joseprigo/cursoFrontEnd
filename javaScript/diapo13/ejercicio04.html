@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" type="text/css" href="css/ejercicio04.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>04 - </title>
+	<style type="text/css">
+		section {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-around;
+		}
+		article{
+			outline: 1px solid blue;
+		}
+		label{
+			display: inline-block;
+			width: 20%;
+		}
+		input{
+			display: inline-block;
+			width: 70%;
+		}
+	</style>
+	<script >
+		// ejemplo
+		function otraVersion(fin, ahora){
+			var seg = parseInt((fin-ahora)/1000);
+			var segundos = seg%60;
+			var minutos = parseInt(seg/60)%60;
+			var horas = parseInt(seg/3600)%24;
+			var dias = parseInt(seg/86400);
+		}
+		
+		var calculadorHoras;
+		function activar(){
+			clearInterval(calculadorHoras);
+
+			var dia = parseInt(document.getElementById("dia").value);
+			var mes = parseInt(document.getElementById("mes").value) -1;
+			var any = parseInt(document.getElementById("any").value);
+			var hora = parseInt(document.getElementById("hora").value);
+			var min = parseInt(document.getElementById("min").value);
+			var seg = parseInt(document.getElementById("seg").value);
+
+
+
+			calculadorHoras = setInterval(function (){
+			 	obtenerCuenta(dia,mes,any,hora, min, seg)}, 500);
+		}
+		function obtenerCuenta(dia,mes,any,hora, min, seg){
+			var fechaObjetivo = new Date(any, mes, dia, hora, min,seg,0);
+			var fechaActual = new Date();
+
+			if(fechaObjetivo > fechaActual){
+				var dif = fechaObjetivo - fechaActual;
+				var diferencia = new Date(fechaObjetivo - fechaActual);
+				var difDias = parseInt(diferencia / 1000 / 60 / 60 / 24);
+				var difHora = diferencia.getUTCHours();
+				var difMinu = diferencia.getUTCMinutes();
+				var difSecu = diferencia.getUTCSeconds();
+				difHora = difHora + " : " + difMinu + " : " + difSecu;
+				document.getElementById("pasadias").innerHTML = difDias;
+				document.getElementById("pasatiempo").innerHTML = difHora;
+
+			}else{
+				window.location.href = "img/explosion.gif";
+			}
+
+		}
+	</script>
+</head>
+<body>
+	<h1>IT'S THE FINAL COUNTDOWN</h1>
+	<section>
+		<article>
+			<label>Dia:</label><input type="number" id="dia" value="22"/><br />
+			<label>Mes:</label><input type="number" id="mes" value="3"/><br />
+			<label>Año:</label><input type="number" id="any" value="2019"/><br />
+			<label>Hora:</label><input type="number" id="hora" value="12"/><br />
+			<label>Min:</label><input type="number" id="min" value="0"/><br />
+			<label>Seg:</label><input type="number" id="seg" value="0" /><br />
+			<button onclick="activar();">GO!</button>
+			<hr />
+			<span> Días: </span><output id="pasadias"></output>
+			<br />
+			<span> Tiempo: </span><output id="pasatiempo"></output>
+		</article>
+		<article>
+			<img src="img/europe.jpg" />
+		</article>
+	</section>
+</body>
+</html>

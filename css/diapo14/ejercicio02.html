@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" type="text/css" href="css/ejercicio02.css">
+		<title>02 - Realizar este grid</title>
+		<style type="text/css">
+		figure {
+			padding: 0;
+			margin: 0;
+		}
+			header {
+				background-color: red;
+				grid-area: he;
+			}
+			form {
+				background-color: red;
+				grid-area: fo;
+			}
+			main {
+				background-color: #ffcc00;
+				grid-area: ma;
+			}
+			aside:first-of-type{
+				background-color: purple;
+				grid-area: tp;
+			}
+			aside:last-of-type{
+				background-color: purple;
+				grid-area: bo;
+			}
+			figure:nth-of-type(1){
+				background-color: #66c;
+				grid-area: pu;
+			}
+			figure:nth-of-type(2){
+				background-color: #66c;
+				grid-area: ce;
+			}
+			figure:nth-of-type(3){
+				background-color: #66c;
+				grid-area: ri;
+			}
+			body{
+				display: grid;
+				grid-gap: 0.5vw;
+				/*grid-template-rows: 60px repeat(2, 80px) 50px;*/
+				grid-template-areas: 
+				'he he he he he he he fo fo fo'
+				'ma ma ma ma ma tp tp tp tp tp'
+				'ma ma ma ma ma bo bo bo bo bo'
+				'pu pu ce ce ce ce ce ce ri ri';
+				grid-template-columns: repeat(10, 1fr);
+			}
+			img{
+				width: 100%;
+			}
+		</style>
+	</head>
+	<body>
+		<header>test</header>
+		<form action="">test</form>
+		<main>test</main>
+		<aside>test<img src="img/caja.jpg"></aside>
+		<aside>test</aside>
+		<figure>test</figure>
+		<figure>test</figure>
+		<figure>test</figure>
+	</body>
+</html>

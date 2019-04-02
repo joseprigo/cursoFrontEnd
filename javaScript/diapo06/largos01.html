@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" type="text/css" href="css/ejercicio01.css" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>01 - implementar bucles</title>
+		<script type="text/javascript">
+			function factorial(){
+				var n = parseInt(document.getElementById("numero").value);
+				var res = 1;
+				for (var i = n; i > 0; i--){
+					res *= i;
+				}
+				document.getElementById("resultado").innerHTML = res;
+			}
+		</script>
+	</head>
+	<body>
+		<h1> Factorial.</h1>
+		<label> numero: </label> <input type="number" id="numero" value="0" onchange="factorial()" /><span>!</span><br />
+		<hr />
+		<label>resultado: </label><output id="resultado"></output>
+	</body>
+</html>

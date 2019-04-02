@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" type="text/css" href="css/ejercicio02.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>02 - vida en las lunas de Júpiter </title>
+	<style type="text/css">
+		header{
+			background-image: url("img/europa.jpg");
+			background-size: 100%;
+			height: 48vw;
+			width: 100%;
+			/*width: 900px;*/
+			position: relative;
+		}
+
+		#ufo{
+			width: 40vw;
+			z-index: 100;
+			position: absolute;
+			animation-name: levitar, brillar, irse;
+			animation-duration: 4s, 0.5s, 0.2s;
+			animation-iteration-count:2, infinite, 1;
+			animation-direction: alternate, normal, normal;
+			animation-fill-mode: forwards,none, forwards;
+			animation-delay: 0s,0s, 8.2s;
+		}
+
+
+		#alien{
+			height: 0vw;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			animation-name: aparecer;
+			animation-duration: 3s;
+			animation-fill-mode: forwards;
+			animation-delay: 4.5s;
+			filter: drop-shadow(0.1vw -0.1vw  0.3vw rgba(128,0,128, 1));
+
+		}
+
+		@keyframes aparecer{
+			from{ height : 0vw; }
+			to{height: 10vw;}
+		}
+
+		@keyframes levitar{
+			from{
+				top:0px;
+				right: 0px;
+			}
+			to{
+				top:40%;
+				right: 30%;
+			}
+		}
+
+		@keyframes brillar{
+			from {
+				filter: drop-shadow( 0vw 0vw 0vw rgba(255, 255, 255, 0));
+			}
+			to{
+				filter: drop-shadow( 1vw 0vw 1vw rgba(255,255,255,1));
+			}
+		}
+
+		@keyframes irse{
+			from {width: 40vw;}
+			to{width: .1vw;}
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<img id="ufo" src="img/ufo.png" />
+		<img id="alien" src="img/alien.png" />
+	</header>
+	<button onclick="window.location='ejercicio02.html'">reiniciar</button>
+</body>
+</html>

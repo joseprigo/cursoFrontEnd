@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" type="text/css" href="css/ejercicio01.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>09 - Ecuaciones de segundo grado</title>
+		<script type="text/javascript">
+			function calcular(){
+				var a = parseFloat(document.getElementById("ladoa").value);
+				var b = parseFloat(document.getElementById("ladob").value);
+				var c = parseFloat(document.getElementById("ladoc").value);
+				var resultado = "";
+				switch(true){
+					case isNaN(a) || isNaN(b) || isNaN(c):
+					var resultado = "Se ha introducido un valor no numérico";
+					break;
+					case a == 0.00:
+					var resultado = "a = 0, no es una ecuación de segundo grado.";
+					break;
+					case b ** 2 -4 * a * c < 0:
+					var resultado = "Raíz de un negativo";
+					break;
+					case b ** 2 -4 * a * c == 0:
+					var x = -b/2*a;
+					var resultado = " x = " + x.toFixed(2);
+					break;
+					default:
+					var raiz = Math.sqrt(b ** 2 -4 * a * c);
+					var x1 = (-b + raiz) /2*a;
+					var x2 = (-b - raiz) /2*a;
+					var resultado = " x<sub>1</sub> = " + x1.toFixed(2) + "<br />x<sub>2</sub> = " + x2.toFixed(2);
+					break;
+				}
+				document.getElementById("resultado").innerHTML = resultado;
+			}
+		</script>
+	</head>
+	<body>
+		
+		<section>
+		<h1>Calcular Ecuaciones de segundo grado</h1>
+		<label >número A:</label>
+		<input id="ladoa" type="number" value="0" />
+		<br />
+		<label >número B:</label>
+		<input id="ladob" type="number" value="0"/>
+		<br />
+		<label >número C:</label>
+		<input id="ladoc" type="number" value="0"/>
+		<br />
+		<hr />
+		<button onclick="calcular()">Calcular</button>
+		<div id="pantalla">
+			<output id="resultado"></output>
+		</div>
+	</section>
+		<section>
+			<img src="img/maxresdefault.jpg" />
+		</section>
+	</body>
+</html>

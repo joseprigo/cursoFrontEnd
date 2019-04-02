@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" type="text/css" href="css/ejercicio01.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>01 - Fondo según navegador</title>
+	</head>
+	<body>
+		<h1>Lorem Ipsum</h1>
+		<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+	</body>
+	<script type="text/javascript">
+		var sBrowser, sUsrAg = navigator.userAgent;
+// https://developer.mozilla.org/en-US/docs/Web/API/Window/navigator
+// The order matters here, and this may report false positives for unlisted browsers.
+
+if (sUsrAg.indexOf("Firefox") > -1) {
+  sBrowser = "Mozilla Firefox";
+  // "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:61.0) Gecko/20100101 Firefox/61.0"
+} else if (sUsrAg.indexOf("Opera") > -1 || sUsrAg.indexOf("OPR") > -1) {
+  sBrowser = "Opera";
+  //"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36 OPR/57.0.3098.106"
+} else if (sUsrAg.indexOf("Trident") > -1) {
+  sBrowser = "Microsoft Internet Explorer";
+  // "Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; .NET4.0C; .NET4.0E; Zoom 3.6.0; wbx 1.0.0; rv:11.0) like Gecko"
+} else if (sUsrAg.indexOf("Edge") > -1) {
+  sBrowser = "Microsoft Edge";
+  // "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 Edge/16.16299"
+} else if (sUsrAg.indexOf("Chrome") > -1) {
+  sBrowser = "Google Chrome or Chromium";
+  // "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/66.0.3359.181 Chrome/66.0.3359.181 Safari/537.36"
+} else if (sUsrAg.indexOf("Safari") > -1) {
+  sBrowser = "Apple Safari";
+  // "Mozilla/5.0 (iPhone; CPU iPhone OS 11_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/11.0 Mobile/15E148 Safari/604.1 980x1306"
+} else {
+  sBrowser = "unknown";
+}
+
+
+console.log(sBrowser);
+
+if(sBrowser == "Google Chrome or Chromium"){
+	document.body.style.backgroundColor = "red";
+}else if(sBrowser == "Mozilla Firefox"){
+	document.body.style.backgroundColor = "blue";
+}else{
+	document.body.innerHTML = ("<h1> utiliza Chrome o Mozilla para ser feliz y mejor persona");
+}	
+</script>
+</html>

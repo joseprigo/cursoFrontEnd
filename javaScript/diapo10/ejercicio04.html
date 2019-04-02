@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" type="text/css" href="css/ejercicio04.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>04 - ENIGMA</title>
+	<style type="text/css">
+		body{
+			display: flex;
+			justify-content: space-around;
+		}
+		textarea{
+			resize: none;
+			width: 30vw;
+			height: 10vw;
+		}
+	</style>
+	<script>
+		function invertir(unaCadena){
+			unaCadena = unaCadena.split("");
+			unaCadena = unaCadena.reverse();
+			unaCadena = unaCadena.join("");
+			return unaCadena;
+		}
+		function encriptar(){
+			var texto = document.getElementById("texto").value;
+			var sumador = parseInt(document.getElementById("sumador").value);
+			var encriptado = "";
+			for(var i = 0; i<texto.length; i++){
+				var codigo = texto.charCodeAt(i) + sumador;
+				var letra = String.fromCharCode(codigo);
+				encriptado+= letra;
+			}
+			encriptado = invertir(encriptado);
+			document.getElementById("texto").value = encriptado;
+
+		}
+		function desencriptar(){
+			var texto = document.getElementById("texto").value;
+			var sumador = parseInt(document.getElementById("sumador").value);
+			texto = invertir(texto);
+			var desencriptado = "";
+			for(var i = 0; i<texto.length; i++){
+				var codigo = texto.charCodeAt(i) - sumador;
+				var letra = String.fromCharCode(codigo);
+				desencriptado+= letra;
+			}
+			document.getElementById("texto").value = desencriptado;
+
+		}
+	</script>
+</head>
+<body>
+	<section>
+		<h1>Encriptador</h1>
+		<label>Valor de la encriptación</label>
+		<input type="number" id="sumador" />
+
+		<br />
+		<label>introduce el texto:</label>
+		<br>
+		<textarea id="texto"></textarea>
+		<hr />
+		<button onclick="encriptar()"> Encriptar</button>
+		<button onclick="desencriptar()"> Desencriptar</button>
+	</section>
+
+
+</body>
